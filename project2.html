@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<!--
+	Projet 2 - Prédiction des Prix Immobiliers
+-->
+<html>
+	<head>
+		<title>Projet 2 - Prédiction Prix | Hayat Akarzazi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Hayat Akarzazi</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Accueil</a></li>
+							<li class="active"><a href="project2.html">Prédiction Prix</a></li>
+							<li><a href="index.html#projects">Tous les Projets</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://linkedin.com/in/hayat-akarzabi" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/HayatAkarzabi" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:hayat.akarzabi@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">2025</span>
+									<h1>Prédiction des<br />
+									Prix Immobiliers Parisiens</h1>
+									<p>Analyse de données et modèles de machine learning<br />
+									pour prédire le marché immobilier parisien.</p>
+								</header>
+								
+								<div class="image main"><img src="images/pic03.jpg" alt="Visualisation des données" /></div>
+								
+								<!-- GitHub Link -->
+								<div class="box" style="text-align: center; padding: 2rem; background: #f5f5f5;">
+									<h3><i class="fab fa-github"></i> Code Source du Projet</h3>
+									<p>Le notebook Jupyter et les modèles sont sur GitHub :</p>
+									<a href="https://github.com/HayatAkarzabi/PythonProject" class="button primary icon brands fa-github" target="_blank" style="margin: 10px;">Voir sur GitHub</a>
+									<a href="https://github.com/HayatAkarzabi/PythonProject" class="button icon solid fa-download" style="margin: 10px;">Télécharger le Code</a>
+								</div>
+
+								<h2>Description du Projet</h2>
+								<p>Ce projet utilise des techniques de machine learning pour prédire les prix des appartements à Paris. Basé sur le dataset "Paris Housing" de Kaggle, j'ai développé plusieurs modèles de régression et créé une interface interactive avec Streamlit.</p>
+								
+								<h2>Dataset Utilisé</h2>
+								<div class="table-wrapper">
+									<table class="alt">
+										<thead>
+											<tr>
+												<th>Source</th>
+												<th>Nombre d'observations</th>
+												<th>Features</th>
+												<th>Période</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><a href="https://www.kaggle.com/datasets/mssmartypants/paris-housing-price-prediction" target="_blank">Kaggle - Paris Housing</a></td>
+												<td>10,000+</td>
+												<td>17 variables</td>
+												<td>2019-2020</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h2>Variables Principales</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Caractéristiques du Bien</h3>
+										<ul>
+											<li>Surface (m²)</li>
+											<li>Nombre de pièces</li>
+											<li>Étage</li>
+											<li>Année de construction</li>
+											<li>Type de bien</li>
+											<li>Arrondissement</li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Caractéristiques du Quartier</h3>
+										<ul>
+											<li>Proximité transports</li>
+											<li>Nombre d'écoles</li>
+											<li>Commerces à proximité</li>
+											<li>Espaces verts</li>
+											<li>Indice de sécurité</li>
+											<li>Prix moyen du m²</li>
+										</ul>
+									</div>
+								</div>
+
+								<h2>Modèles Testés et Performances</h2>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Modèle</th>
+												<th>RMSE (€)</th>
+												<th>R² Score</th>
+												<th>MAE (€)</th>
+												<th>Temps d'entraînement</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Régression Linéaire</td>
+												<td>85,430</td>
+												<td>0.72</td>
+												<td>62,150</td>
+												<td>0.5s</td>
+											</tr>
+											<tr>
+												<td>Random Forest</td>
+												<td>52,180</td>
+												<td>0.89</td>
+												<td>38,940</td>
+												<td>3.2s</td>
+											</tr>
+											<tr>
+												<td>XGBoost</td>
+												<td><strong>48,750</strong></td>
+												<td><strong>0.92</strong></td>
+												<td><strong>35,620</strong></td>
+												<td>4.8s</td>
+											</tr>
+											<tr>
+												<td>Gradient Boosting</td>
+												<td>50,120</td>
+												<td>0.90</td>
+												<td>37,850</td>
+												<td>5.1s</td>
+											</tr>
+											<tr>
+												<td>Réseau de Neurones</td>
+												<td>55,430</td>
+												<td>0.87</td>
+												<td>41,230</td>
+												<td>28s</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h2>Pipeline de Traitement</h2>
+								<pre><code># Pipeline de prétraitement et modélisation
+import pandas as pd
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+
+# Préparation des données
+numeric_features = ['squareMeters', 'numberOfRooms', 'floors']
+categorical_features = ['cityCode', 'hasStormProtector']
+
+# Pipeline de prétraitement
+preprocessor = ColumnTransformer([
+    ('num', StandardScaler(), numeric_features),
+    ('cat', OneHotEncoder(), categorical_features)
+])
+
+# Pipeline complet
+pipeline = Pipeline([
+    ('preprocessor', preprocessor),
+    ('regressor', RandomForestRegressor(n_estimators=100))
+])
+
+# Entraînement
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+pipeline.fit(X_train, y_train)</code></pre>
+
+								<h2>Interface Streamlit</h2>
+								<p>J'ai développé une interface web interactive permettant aux utilisateurs de :</p>
+								<ul>
+									<li>Saisir les caractéristiques d'un bien</li>
+									<li>Visualiser la prédiction en temps réel</li>
+									<li>Comparer différents arrondissements</li>
+									<li>Télécharger les prédictions en CSV</li>
+									<li>Visualiser l'importance des features</li>
+								</ul>
+
+								<div class="box">
+									<h3>Comment lancer l'application :</h3>
+									<pre><code># Installation
+pip install -r requirements.txt
+
+# Lancer l'application Streamlit
+streamlit run app.py
+
+# L'application sera disponible sur http://localhost:8501</code></pre>
+								</div>
+
+								
+
+								<h2>Résultats et Insights</h2>
+								<dl>
+									<dt>Insight 1 : Surface vs Prix</dt>
+									<dd>
+										<p>La surface est le facteur le plus important (42% de variance expliquée), suivie par l'arrondissement (28%).</p>
+									</dd>
+									<dt>Insight 2 : Effet de l'étage</dt>
+									<dd>
+										<p>Les étages élevés (sans être le dernier) ont une prime de +8% par rapport au rez-de-chaussée.</p>
+									</dd>
+									<dt>Insight 3 : Impact des transports</dt>
+									<dd>
+										<p>La proximité d'une station de métro ajoute en moyenne 12% à la valeur du bien.</p>
+									</dd>
+								</dl>
+
+								<!-- Boutons de navigation -->
+								<ul class="actions special" style="margin-top: 2rem;">
+									<li><a href="project1.html" class="button large">← Projet Précédent</a></li>
+									<li><a href="index.html#projects" class="button">Retour aux Projets</a></li>
+									<li><a href="project3.html" class="button large">Projet Suivant →</a></li>
+								</ul>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+                            <h3>Intéressé par ce projet ?</h3>
+                            <p>Contactez-moi pour plus d'informations ou pour collaborer.</p>
+                            <ul class="actions">
+                                <li><a href="mailto:hayat.akarzabi@gmail.com" class="button">Email</a></li>
+                            </ul>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Compétences Développées</h3>
+								<p>Machine Learning • Data Analysis • Python • Streamlit • Scikit-learn • XGBoost</p>
+							</section>
+							<section>
+								<h3>Projets Similaires</h3>
+								<p><a href="project1.html">Plateforme Immobilière</a><br />
+								<a href="project3.html">Classification d'Images</a></p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Hayat Akarzazi 2025</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

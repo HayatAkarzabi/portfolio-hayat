@@ -1,0 +1,1620 @@
+<!DOCTYPE HTML>
+<!--
+	Portfolio de Hayat Akarzazi
+	Basé sur Massively by HTML5 UP
+-->
+<html>
+	<head>
+		<title>Portfolio | Hayat Akarzazi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<style>
+			/* Styles spécifiques pour les certifications */
+			.cert-article {
+				background: white;
+				border-radius: 10px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+				transition: all 0.3s ease;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.cert-article:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+			}
+			
+			.cert-image-container {
+				position: relative;
+				height: 200px;
+				overflow: hidden;
+			}
+			
+			.cert-image {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.5s ease;
+			}
+			
+			.cert-article:hover .cert-image {
+				transform: scale(1.05);
+			}
+			
+			.cert-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0,0,0,0.6);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+			
+			.cert-article:hover .cert-overlay {
+				opacity: 1;
+			}
+			
+			.cert-overlay a {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: white;
+				color: #3498db;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-decoration: none;
+				transition: all 0.3s ease;
+			}
+			
+			.cert-overlay a:hover {
+				background: #3498db;
+				color: white;
+				transform: scale(1.1);
+			}
+			
+			.cert-content {
+				padding: 1.5rem;
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.cert-header {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				margin-bottom: 1rem;
+			}
+			
+			.cert-icon {
+				width: 40px;
+				height: 40px;
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-size: 1.2rem;
+				flex-shrink: 0;
+			}
+			
+			.cert-title h3 {
+				color: #2c3e50;
+				margin: 0 0 0.25rem 0;
+				font-size: 1.2rem;
+			}
+			
+			.cert-issuer {
+				color: #7f8c8d;
+				font-size: 0.9rem;
+				font-weight: 500;
+				margin: 0;
+			}
+			
+			.cert-meta {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 1rem;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid #eee;
+				font-size: 0.85rem;
+				color: #666;
+			}
+			
+			.cert-meta i {
+				color: #3498db;
+				margin-right: 0.25rem;
+			}
+			
+			.cert-desc {
+				color: #555;
+				font-size: 0.95rem;
+				line-height: 1.5;
+				margin-bottom: 1rem;
+				flex-grow: 1;
+			}
+			
+			.cert-skills {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-bottom: 1rem;
+			}
+			
+			.skill-tag {
+				background: #e8f4fc;
+				color: #3498db;
+				padding: 0.3rem 0.8rem;
+				border-radius: 15px;
+				font-size: 0.8rem;
+				font-weight: 500;
+			}
+			
+			.cert-verify-btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+				padding: 0.75rem 1.5rem;
+				background: #3498db;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+				font-size: 0.9rem;
+				font-weight: 500;
+				transition: all 0.3s ease;
+				border: none;
+				cursor: pointer;
+				width: 100%;
+				margin-top: auto;
+			}
+			
+			.cert-verify-btn:hover {
+				background: #2980b9;
+				transform: translateY(-2px);
+				box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+			}
+			
+			/* Styles pour la section À Propos */
+			.about-section {
+				background: #f8f9fa;
+				padding: 4rem 0;
+			}
+			
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+			
+			.subtitle {
+				color: #666;
+				font-size: 1.2rem;
+				margin-top: 0.5rem;
+				text-align: center;
+			}
+			
+			.section-card {
+				background: white;
+				border-radius: 15px;
+				padding: 2.5rem;
+				margin-bottom: 2rem;
+				box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+				transition: transform 0.3s ease;
+			}
+			
+			.section-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.section-card h2 {
+				color: #2c3e50;
+				margin-bottom: 2rem;
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				font-size: 1.8rem;
+			}
+			
+			.section-card h2 i {
+				color: #3498db;
+			}
+			
+			/* Timeline */
+			.timeline {
+				position: relative;
+				padding-left: 2rem;
+			}
+			
+			.timeline::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 3px;
+				background: #3498db;
+			}
+			
+			.timeline-item {
+				position: relative;
+				margin-bottom: 2.5rem;
+				padding-left: 2rem;
+			}
+			
+			.timeline-item:last-child {
+				margin-bottom: 0;
+			}
+			
+			.timeline-item::before {
+				content: '';
+				position: absolute;
+				left: -2.5rem;
+				top: 0;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				background: #3498db;
+				border: 3px solid white;
+				box-shadow: 0 0 0 4px #3498db;
+			}
+			
+			.timeline-date {
+				font-weight: 600;
+				color: #3498db;
+				margin-bottom: 0.5rem;
+				font-size: 0.9rem;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+			
+			.timeline-content h3 {
+				color: #2c3e50;
+				margin-bottom: 0.5rem;
+				font-size: 1.3rem;
+			}
+			
+			.institution {
+				color: #7f8c8d;
+				font-weight: 500;
+				margin-bottom: 0.75rem;
+			}
+			
+			.tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-top: 1rem;
+			}
+			
+			.tag {
+				background: #e8f4fc;
+				color: #3498db;
+				padding: 0.3rem 0.8rem;
+				border-radius: 15px;
+				font-size: 0.85rem;
+				font-weight: 500;
+			}
+			
+			/* Expérience */
+			.experience-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-bottom: 1.5rem;
+				padding-bottom: 1rem;
+				border-bottom: 2px solid #f0f0f0;
+			}
+			
+			.experience-title h3 {
+				color: #2c3e50;
+				margin-bottom: 0.25rem;
+			}
+			
+			.company {
+				color: #7f8c8d;
+				font-size: 1.1rem;
+				font-weight: 500;
+			}
+			
+			.badge {
+				background: #3498db;
+				color: white;
+				padding: 0.5rem 1rem;
+				border-radius: 20px;
+				font-size: 0.85rem;
+				font-weight: 600;
+			}
+			
+			.achievements {
+				list-style: none;
+				padding: 0;
+			}
+			
+			.achievements li {
+				margin-bottom: 0.75rem;
+				padding-left: 0;
+				display: flex;
+				align-items: flex-start;
+				gap: 0.75rem;
+			}
+			
+			.achievements i {
+				color: #3498db;
+				margin-top: 0.2rem;
+			}
+			
+			.tech-stack {
+				display: grid;
+				gap: 0.75rem;
+			}
+			
+			.tech-item {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				padding: 0.75rem;
+				background: #f8f9fa;
+				border-radius: 8px;
+				transition: transform 0.2s;
+			}
+			
+			.tech-item:hover {
+				transform: translateX(5px);
+				background: #e8f4fc;
+			}
+			
+			.tech-item i {
+				font-size: 1.2rem;
+				color: #3498db;
+			}
+			
+			.results {
+				margin-top: 2rem;
+				padding-top: 1.5rem;
+				border-top: 2px solid #f0f0f0;
+			}
+			
+			.result-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				gap: 1.5rem;
+			}
+			
+			.result-item {
+				text-align: center;
+				padding: 1.5rem;
+				background: #f8f9fa;
+				border-radius: 10px;
+				transition: transform 0.3s;
+			}
+			
+			.result-item:hover {
+				transform: translateY(-5px);
+				background: #e8f4fc;
+			}
+			
+			.result-value {
+				font-size: 2.5rem;
+				font-weight: 700;
+				color: #3498db;
+				margin-bottom: 0.5rem;
+			}
+			
+			.result-label {
+				color: #7f8c8d;
+				font-size: 0.9rem;
+			}
+			
+			/* Compétences */
+			.skills-container {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+			}
+			
+			.skill-category h3 {
+				color: #2c3e50;
+				margin-bottom: 1.5rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				font-size: 1.2rem;
+			}
+			
+			.skill-list {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+			
+			.skill-item {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+			
+			.skill-name {
+				display: flex;
+				justify-content: space-between;
+				font-weight: 500;
+				color: #2c3e50;
+			}
+			
+			.skill-bar {
+				height: 8px;
+				background: #ecf0f1;
+				border-radius: 4px;
+				overflow: hidden;
+			}
+			
+			.skill-level {
+				height: 100%;
+				background: linear-gradient(90deg, #3498db, #2ecc71);
+				border-radius: 4px;
+				transition: width 1s ease;
+			}
+			
+			/* Langues */
+			.languages-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1.5rem;
+			}
+			
+			.language-item {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1.5rem;
+				background: #f8f9fa;
+				border-radius: 12px;
+				transition: transform 0.3s;
+			}
+			
+			.language-item:hover {
+				transform: translateX(10px);
+				background: #e8f4fc;
+			}
+			
+			.language-info h3 {
+				color: #2c3e50;
+				margin-bottom: 0.25rem;
+				font-size: 1.2rem;
+			}
+			
+			.language-info p {
+				color: #7f8c8d;
+				font-size: 0.9rem;
+			}
+			
+			.language-level {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.level-dots {
+				display: flex;
+				gap: 0.5rem;
+			}
+			
+			.dot {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background: #ecf0f1;
+			}
+			
+			.dot.active {
+				background: #3498db;
+			}
+			
+			.level-text {
+				font-size: 0.85rem;
+				color: #7f8c8d;
+				font-weight: 600;
+			}
+			
+			/* Centres d'intérêt */
+			.interests-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1.5rem;
+			}
+			
+			.interest-item {
+				text-align: center;
+				padding: 2rem 1.5rem;
+				background: #f8f9fa;
+				border-radius: 15px;
+				transition: all 0.3s ease;
+			}
+			
+			.interest-item:hover {
+				background: #e8f4fc;
+				transform: translateY(-5px);
+			}
+			
+			.interest-icon {
+				width: 60px;
+				height: 60px;
+				background: #3498db;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 1rem;
+				color: white;
+				font-size: 1.5rem;
+			}
+			
+			.interest-item h3 {
+				color: #2c3e50;
+				margin-bottom: 0.5rem;
+				font-size: 1.1rem;
+			}
+			
+			.interest-item p {
+				color: #666;
+				font-size: 0.9rem;
+				line-height: 1.4;
+			}
+			
+			/* Footer */
+			.professional-footer {
+				background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+				color: white;
+				padding: 4rem 0 2rem;
+				margin-top: 4rem;
+			}
+			
+			.footer-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+			
+			.footer-content {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 3rem;
+				margin-bottom: 3rem;
+			}
+			
+			.footer-section h3 {
+				color: white;
+				margin-bottom: 1.5rem;
+				font-size: 1.2rem;
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+			}
+			
+			.contact-info {
+				display: flex;
+				align-items: flex-start;
+				gap: 1rem;
+				margin-bottom: 1.5rem;
+			}
+			
+			.contact-info i {
+				font-size: 1.2rem;
+				color: #3498db;
+				margin-top: 0.2rem;
+			}
+			
+			.contact-info h4 {
+				color: #ecf0f1;
+				margin-bottom: 0.25rem;
+				font-size: 1rem;
+			}
+			
+			.contact-info p,
+			.contact-info a {
+				color: #bdc3c7;
+				text-decoration: none;
+				font-size: 0.9rem;
+				transition: color 0.3s;
+			}
+			
+			.contact-info a:hover {
+				color: #3498db;
+			}
+			
+			.social-links {
+				display: flex;
+				flex-direction: column;
+				gap: 0.75rem;
+			}
+			
+			.social-link {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				padding: 0.75rem 1rem;
+				background: rgba(255,255,255,0.05);
+				border-radius: 8px;
+				color: white;
+				text-decoration: none;
+				transition: all 0.3s;
+			}
+			
+			.social-link:hover {
+				background: rgba(52, 152, 219, 0.2);
+				transform: translateX(5px);
+			}
+			
+			.social-link i {
+				font-size: 1.2rem;
+			}
+			
+			.social-link.linkedin i { color: #0077b5; }
+			.social-link.github i { color: #6cc644; }
+			.social-link.cv i { color: #e74c3c; }
+			
+			.availability {
+				padding: 1rem;
+				background: rgba(255,255,255,0.05);
+				border-radius: 8px;
+			}
+			
+			.status-indicator {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.status-dot {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+			}
+			
+			.status-dot.available {
+				background: #2ecc71;
+				box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+				animation: pulse 2s infinite;
+			}
+			
+			@keyframes pulse {
+				0%, 100% { opacity: 1; }
+				50% { opacity: 0.5; }
+			}
+			
+			.footer-bottom {
+				border-top: 1px solid rgba(255,255,255,0.1);
+				padding-top: 2rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 1.5rem;
+			}
+			
+			.copyright p {
+				color: #bdc3c7;
+				font-size: 0.9rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.design-credit {
+				font-size: 0.85rem;
+				opacity: 0.7;
+			}
+			
+			.design-credit a {
+				color: #3498db;
+				text-decoration: none;
+			}
+			
+			.footer-actions {
+				display: flex;
+				gap: 1rem;
+			}
+			
+			.btn-contact,
+			.btn-home {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				padding: 0.75rem 1.5rem;
+				border-radius: 25px;
+				text-decoration: none;
+				font-weight: 600;
+				transition: all 0.3s;
+			}
+			
+			.btn-contact {
+				background: #3498db;
+				color: white;
+			}
+			
+			.btn-home {
+				background: rgba(255,255,255,0.1);
+				color: white;
+			}
+			
+			.btn-contact:hover {
+				background: #2980b9;
+				transform: translateY(-2px);
+			}
+			
+			.btn-home:hover {
+				background: rgba(255,255,255,0.2);
+				transform: translateY(-2px);
+			}
+			
+			/* Responsive */
+			@media (max-width: 768px) {
+				.container {
+					padding: 0 1rem;
+				}
+				
+				.cert-image-container {
+					height: 180px;
+				}
+				
+				.cert-meta {
+					flex-direction: column;
+					gap: 0.5rem;
+				}
+				
+				.section-card {
+					padding: 1.5rem;
+				}
+				
+				.section-card h2 {
+					font-size: 1.5rem;
+				}
+				
+				.skills-container {
+					grid-template-columns: 1fr;
+				}
+				
+				.languages-grid,
+				.interests-grid {
+					grid-template-columns: 1fr;
+				}
+				
+				.experience-header {
+					flex-direction: column;
+					gap: 1rem;
+				}
+				
+				.timeline {
+					padding-left: 1rem;
+				}
+				
+				.timeline-item {
+					padding-left: 1.5rem;
+				}
+				
+				.timeline-item::before {
+					left: -1.8rem;
+				}
+				
+				.footer-content {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+				}
+				
+				.footer-bottom {
+					flex-direction: column;
+					text-align: center;
+				}
+				
+				.footer-actions {
+					justify-content: center;
+				}
+			}
+			
+			/* Animations */
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			
+			.section-card,
+			.cert-article {
+				animation: fadeInUp 0.6s ease-out;
+			}
+			
+			@media screen and (min-width: 737px) and (max-width: 980px) {
+				.posts {
+					grid-template-columns: repeat(2, 1fr) !important;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Hayat Akarzazi</h1>
+						<p>Étudiante Ingénieure en Data Science et Informatique<br />
+						Développement Logiciel • Machine Learning • Data Science</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Découvrir</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Hayat Akarzazi</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Accueil</a></li>
+							<li><a href="#about">À Propos</a></li>
+							<li><a href="#projects">Projets</a></li>
+							<li><a href="#certifications">Certifications</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://linkedin.com/in/hayat-akarzabi" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/HayatAkarzabi" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:hayat.akarzabi@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="#">Bienvenue sur mon Portfolio</a></h2>
+									<p>Passionnée par les technologies émergentes et l'innovation, je me spécialise dans le développement logiciel, la science des données et le machine learning.
+
+Actuellement à la recherche d’un stage de fin d’année (PFA), d’un emploi étudiant ou de toute autre opportunité professionnelle, je souhaite appliquer mes compétences techniques, monter en compétences et contribuer activement à des projets innovants.</p>
+								</header>
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="Bannière développement" /></a>
+								
+							</article>
+
+						<!-- Posts - Projects -->
+						<section class="posts" id="projects">
+							<article>
+								<header>
+									<h2><a href="project4.html">Tableaux de Bord Power BI</a></h2>
+								</header>
+								<a href="project4.html" class="image fit"><img src="images/pic05.jpg" alt="Power BI Dashboard" /></a>
+								<p>Conception de tableaux de bord interactifs avec Power BI pour analyse et modélisation de données issues de sources multiples.</p>
+								<ul class="actions special">
+									<li><a href="project4.html" class="button">Détails</a></li>
+									<li><a href="https://github.com/HayatAkarzabi/powerbi-dashboards" class="button icon brands fa-github" target="_blank">Code</a></li>
+								</ul>
+							</article>
+							<article>
+								<header>
+									<h2><a href="project3.html">Classification d'Images par CNN</a></h2>
+								</header>
+								<a href="project3.html" class="image fit"><img src="images/pic04.jpg" alt="Classification Images" /></a>
+								<p>Modèle CNN pour classification multi-classes (chats, chiens, pandas) avec interface de démonstration Gradio.</p>
+								<ul class="actions special">
+									<li><a href="project3.html" class="button">Détails</a></li>
+									<li><a href="https://github.com/HayatAkarzabi/image-classification-cnn" class="button icon brands fa-github" target="_blank">Code</a></li>
+								</ul>
+							</article>
+							<article>
+								<header>
+									<h2><a href="project5.html">Explorateur de Données MySQL</a></h2>
+								</header>
+								<a href="project5.html" class="image fit"><img src="images/pic06.jpg" alt="MySQL Views Explorer" /></a>
+								<p>Application web interactive pour visualiser et explorer les vues MySQL de la base de données webman_prod</p>
+								<ul class="actions special">
+									<li><a href="project5.html" class="button">Détails</a></li>
+									<li><a href="https://github.com/HayatAkarzabi/mysql-explorer" class="button icon brands fa-github" target="_blank">Code</a></li>
+								</ul>
+							</article>
+							<article>
+								<header>
+									<h2><a href="project1.html">AniVerse - Réservation Cinéma</a></h2>
+								</header>
+								<a href="project1.html" class="image fit"><img src="images/pic02.jpg" alt="Gestion Immobilière" /></a>
+								<p>Application web complète avec backend JEE, frontend JSP, CI/CD avec GitHub Actions et Docker.</p>
+								<ul class="actions special">
+									<li><a href="project1.html" class="button">Détails</a></li>
+									<li><a href="https://github.com/HayatAkarzabi/aniverse-cinema" class="button icon brands fa-github" target="_blank">Code</a></li>
+								</ul>
+							</article>
+							<article>
+								<header>
+									<h2><a href="project2.html">Prédiction des Prix Immobiliers</a></h2>
+								</header>
+								<a href="project2.html" class="image fit"><img src="images/pic03.jpg" alt="Prédiction Prix" /></a>
+								<p>Modèles ML (Random Forest, XGBoost) sur dataset Paris Housing avec interface web Streamlit pour visualisation des prédictions.</p>
+								<ul class="actions special">
+									<li><a href="project2.html" class="button">Détails</a></li>
+									<li><a href="https://github.com/HayatAkarzabi/house-price-prediction" class="button icon brands fa-github" target="_blank">Code</a></li>
+								</ul>
+							</article>
+						</section>
+
+						<!-- Section À Propos -->
+						<section id="about" class="about-section">
+							<div class="container">
+								<header class="major">
+									<h1>À Propos de Moi</h1>
+									<p class="subtitle">Etudiante en Ingénierie en Data Science passionnée par l'innovation technologique</p>
+								</header>
+
+								<!-- Timeline de Formation -->
+								<div class="section-card">
+									<h2><i class="fas fa-graduation-cap"></i> Parcours Académique</h2>
+									<div class="timeline">
+										<div class="timeline-item">
+											<div class="timeline-date">2024 - Présent</div>
+											<div class="timeline-content">
+												<h3>Diplôme d'Ingénieur en Data Science</h3>
+												<p class="institution">FST Mohammedia</p>
+												<p>Spécialisation en Machine Learning, Big Data et Intelligence Artificielle</p>
+												<div class="tags">
+													<span class="tag">Machine/Deep Learning</span>
+													<span class="tag">Development</span>
+													<span class="tag">Big Data</span>
+												</div>
+											</div>
+										</div>
+										<div class="timeline-item">
+											<div class="timeline-date">2022 - 2024</div>
+											<div class="timeline-content">
+												<h3>DEUG Sciences Mathématiques & Informatique</h3>
+												<p class="institution">Faculté Polydisciplinaire, Ouarzazate</p>
+												<p>Mention Très Bien - Fondements en algorithmique, structures de données et mathématiques appliquées</p>
+												<div class="tags">
+													<span class="tag">Algorithmique</span>
+													<span class="tag">Maths Appliquées</span>
+													<span class="tag">Programmation</span>
+												</div>
+											</div>
+										</div>
+										<div class="timeline-item">
+											<div class="timeline-date">2022</div>
+											<div class="timeline-content">
+												<h3>Baccalauréat Sciences Mathématiques</h3>
+												<p class="institution">Lycée Idriss Premier</p>
+												<p>Mention Très Bien - Option Sciences Mathématiques A</p>
+												<div class="tags">
+													<span class="tag">Mathématiques</span>
+													<span class="tag">Physique</span>
+													<span class="tag">Informatique</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Expérience Professionnelle -->
+								<div class="section-card">
+									<h2><i class="fas fa-briefcase"></i> Expérience Professionnelle</h2>
+									<div class="experience-card">
+										<div class="experience-header">
+											<div class="experience-title">
+												<h3>Stagiaire en Ingénierie Informatique</h3>
+												<p class="company">NCRM, Casablanca</p>
+											</div>
+											<div class="experience-date">
+												<span class="badge">Avr. 2025 - Juin 2025</span>
+											</div>
+										</div>
+										<div class="experience-details">
+											<div class="row">
+												<div class="col-8 col-12-medium">
+													<h4>Missions Principales</h4>
+													<ul class="achievements">
+														<li><i class="fas fa-chart-line"></i> Conception et développement de dashboards interactifs avec Power BI</li>
+														<li><i class="fas fa-database"></i> Analyse et modélisation de données provenant de sources multiples</li>
+														<li><i class="fas fa-robot"></i> Automatisation des processus de reporting et suivi des KPI</li>
+														<li><i class="fas fa-cogs"></i> Optimisation des requêtes SQL et amélioration des performances</li>
+													</ul>
+												</div>
+												<div class="col-4 col-12-medium">
+													<h4>Technologies</h4>
+													<div class="tech-stack">
+														<div class="tech-item">
+															<i class="fab fa-microsoft"></i>
+															<span>Power BI</span>
+														</div>
+														<div class="tech-item">
+															<i class="fas fa-database"></i>
+															<span>PostgreSQL</span>
+														</div>
+														<div class="tech-item">
+															<i class="fas fa-file-excel"></i>
+															<span>Excel Avancé</span>
+														</div>
+														
+													</div>
+												</div>
+											</div>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Compétences Techniques -->
+								<div class="section-card">
+									<h2><i class="fas fa-code"></i> Compétences Techniques</h2>
+									<div class="skills-container">
+										<div class="skill-category">
+											<h3><i class="fab fa-python"></i> Data Science & AI</h3>
+											<div class="skill-list">
+												<div class="skill-item">
+													<span class="skill-name">Python</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 90%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">Machine Learning</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 85%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">TensorFlow/Keras</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 80%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">Pandas/Numpy</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 95%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="skill-category">
+											<h3><i class="fas fa-laptop-code"></i> Développement</h3>
+											<div class="skill-list">
+												<div class="skill-item">
+													<span class="skill-name">Java (Spring Boot)</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 85%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">JavaScript/TypeScript</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 75%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">Flutter/Dart</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 70%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">REST API</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 88%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="skill-category">
+											<h3><i class="fas fa-database"></i> Bases de Données</h3>
+											<div class="skill-list">
+												<div class="skill-item">
+													<span class="skill-name">SQL (MySQL/PostgreSQL)</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 90%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">MongoDB</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 75%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">ETL/Data Pipeline</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 85%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">Power BI/Tableau</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 92%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="skill-category">
+											<h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+											<div class="skill-list">
+												<div class="skill-item">
+													<span class="skill-name">Docker</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 80%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">Git/GitHub</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 95%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">CI/CD</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 75%"></div>
+													</div>
+												</div>
+												<div class="skill-item">
+													<span class="skill-name">Linux/Shell</span>
+													<div class="skill-bar">
+														<div class="skill-level" style="width: 85%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Langues -->
+								<div class="section-card">
+									<h2><i class="fas fa-language"></i> Compétences Linguistiques</h2>
+									<div class="languages-grid">
+										<div class="language-item">
+											<div class="language-info">
+												<h3>Arabe</h3>
+												<p>Langue maternelle</p>
+											</div>
+											<div class="language-level">
+												<div class="level-dots">
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+												</div>
+												<span class="level-text">Natif</span>
+											</div>
+										</div>
+										
+										<div class="language-item">
+											<div class="language-info">
+												<h3>Amazigh</h3>
+												<p>Langue maternelle</p>
+											</div>
+											<div class="language-level">
+												<div class="level-dots">
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+												</div>
+												<span class="level-text">Natif</span>
+											</div>
+										</div>
+										
+										<div class="language-item">
+											<div class="language-info">
+												<h3>Français</h3>
+												<p>Langue professionnelle</p>
+											</div>
+											<div class="language-level">
+												<div class="level-dots">
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot"></span>
+												</div>
+												<span class="level-text">B2 Avancé</span>
+											</div>
+										</div>
+										
+										<div class="language-item">
+											<div class="language-info">
+												<h3>Anglais</h3>
+												<p>Langue technique</p>
+											</div>
+											<div class="language-level">
+												<div class="level-dots">
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot active"></span>
+													<span class="dot"></span>
+													<span class="dot"></span>
+												</div>
+												<span class="level-text">B1 Intermédiaire</span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Centres d'intérêt -->
+								<div class="section-card">
+									<h2><i class="fas fa-heart"></i> Centres d'Intérêt</h2>
+									<div class="interests-grid">
+										<div class="interest-item">
+											<div class="interest-icon">
+												<i class="fas fa-robot"></i>
+											</div>
+											<h3>Innovation Tech</h3>
+											<p>Veille technologique, hackathons, projets innovants</p>
+										</div>
+										
+										<div class="interest-item">
+											<div class="interest-icon">
+												<i class="fas fa-users"></i>
+											</div>
+											<h3>Communauté Dev</h3>
+											<p>Contributions open source, partage de connaissances</p>
+										</div>
+										
+										<div class="interest-item">
+											<div class="interest-icon">
+												<i class="fas fa-book"></i>
+											</div>
+											<h3>Apprentissage</h3>
+											<p>Lecture technique, MOOCs, workshops</p>
+										</div>
+										
+										<div class="interest-item">
+											<div class="interest-icon">
+												<i class="fas fa-chart-line"></i>
+											</div>
+											<h3>Data Analytics</h3>
+											<p>Analyses prédictives, visualisation de données</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Certifications Section -->
+						<section class="posts" id="certifications">
+							<header class="major">
+								<h1><i class="fas fa-award"></i> Certifications & Formations</h1>
+								<p>Certifications professionnelles validant mes compétences techniques</p>
+							</header>
+							
+							<article class="cert-article">
+								<div class="cert-image-container">
+									<img src="images/certifications/git-github-cert.jpg" alt="Certification Git et GitHub" class="cert-image">
+									<div class="cert-overlay">
+										<a href="assets/certifications/git-github-cert.pdf" target="_blank" title="Voir le PDF">
+											<i class="fas fa-eye"></i>
+										</a>
+										<a href="assets/certifications/git-github-cert.pdf" download title="Télécharger">
+											<i class="fas fa-download"></i>
+										</a>
+									</div>
+								</div>
+								<div class="cert-content">
+									<div class="cert-header">
+										<div class="cert-icon" style="background: #3498db;">
+											<i class="fab fa-git-alt"></i>
+										</div>
+										<div class="cert-title">
+											<h3>Git et GitHub</h3>
+											<p class="cert-issuer">Google Career Certificates</p>
+										</div>
+									</div>
+									<div class="cert-meta">
+										<span><i class="far fa-calendar"></i> Février 2025</span>
+										<span><i class="fas fa-hashtag"></i> GC-CERT-2025-001</span>
+									</div>
+									<p class="cert-desc">Certification avancée en gestion de versions, collaboration d'équipe et workflow Git professionnel.</p>
+									<div class="cert-skills">
+										<span class="skill-tag">Version Control</span>
+										<span class="skill-tag">Collaboration</span>
+										<span class="skill-tag">CI/CD</span>
+									</div>
+									<a href="assets/certifications/git-github-cert.pdf" class="cert-verify-btn" target="_blank">
+										<i class="fas fa-external-link-alt"></i> Vérifier la certification
+									</a>
+								</div>
+							</article>
+							
+							<article class="cert-article">
+								<div class="cert-image-container">
+									<img src="images/certifications/python-microsoft-cert.jpg" alt="Certification Python" class="cert-image">
+									<div class="cert-overlay">
+										<a href="assets/certifications/python-microsoft-cert.pdf" target="_blank" title="Voir le PDF">
+											<i class="fas fa-eye"></i>
+										</a>
+										<a href="assets/certifications/python-microsoft-cert.pdf" download title="Télécharger">
+											<i class="fas fa-download"></i>
+										</a>
+									</div>
+								</div>
+								<div class="cert-content">
+									<div class="cert-header">
+										<div class="cert-icon" style="background: #2ecc71;">
+											<i class="fab fa-python"></i>
+										</div>
+										<div class="cert-title">
+											<h3>Python Fundamentals</h3>
+											<p class="cert-issuer">Microsoft Learn</p>
+										</div>
+									</div>
+									<div class="cert-meta">
+										<span><i class="far fa-calendar"></i> Mars 2025</span>
+										<span><i class="fas fa-hashtag"></i> MS-LRN-PYTH-2025</span>
+									</div>
+									<p class="cert-desc">Fondamentaux de programmation Python, structures de données, algorithmes et développement d'applications.</p>
+									<div class="cert-skills">
+										<span class="skill-tag">Python 3</span>
+										<span class="skill-tag">Data Structures</span>
+										<span class="skill-tag">OOP</span>
+									</div>
+									<a href="assets/certifications/python-microsoft-cert.pdf" class="cert-verify-btn" target="_blank">
+										<i class="fas fa-external-link-alt"></i> Vérifier la certification
+									</a>
+								</div>
+							</article>
+							
+							<article class="cert-article">
+								<div class="cert-image-container">
+									<img src="images/certifications/spring-boot-cert.jpg" alt="Certification Spring Boot" class="cert-image">
+									<div class="cert-overlay">
+										<a href="assets/certifications/spring-boot-cert.pdf" target="_blank" title="Voir le PDF">
+											<i class="fas fa-eye"></i>
+										</a>
+										<a href="assets/certifications/spring-boot-cert.pdf" download title="Télécharger">
+											<i class="fas fa-download"></i>
+										</a>
+									</div>
+								</div>
+								<div class="cert-content">
+									<div class="cert-header">
+										<div class="cert-icon" style="background: #e74c3c;">
+											<i class="fas fa-leaf"></i>
+										</div>
+										<div class="cert-title">
+											<h3>Spring Boot Frameworks</h3>
+											<p class="cert-issuer">LearnQuest / Coursera</p>
+										</div>
+									</div>
+									<div class="cert-meta">
+										<span><i class="far fa-calendar"></i> Avril 2025</span>
+										<span><i class="fas fa-hashtag"></i> LQ-SB-2025-004</span>
+									</div>
+									<p class="cert-desc">Développement d'applications backend avec Spring Boot, Spring Security, JPA et architecture microservices.</p>
+									<div class="cert-skills">
+										<span class="skill-tag">Spring Boot</span>
+										<span class="skill-tag">REST API</span>
+										<span class="skill-tag">Microservices</span>
+									</div>
+									<a href="assets/certifications/spring-boot-cert.pdf" class="cert-verify-btn" target="_blank">
+										<i class="fas fa-external-link-alt"></i> Vérifier la certification
+									</a>
+								</div>
+							</article>
+							
+							<article class="cert-article">
+								<div class="cert-image-container">
+									<img src="images/certifications/machine-learning-cert.jpg" alt="Certification Machine Learning" class="cert-image">
+									<div class="cert-overlay">
+										<a href="assets/certifications/machine-learning-cert.pdf" target="_blank" title="Voir le PDF">
+											<i class="fas fa-eye"></i>
+										</a>
+										<a href="assets/certifications/machine-learning-cert.pdf" download title="Télécharger">
+											<i class="fas fa-download"></i>
+										</a>
+									</div>
+								</div>
+								<div class="cert-content">
+									<div class="cert-header">
+										<div class="cert-icon" style="background: #9b59b6;">
+											<i class="fas fa-brain"></i>
+										</div>
+										<div class="cert-title">
+											<h3>Machine Learning</h3>
+											<p class="cert-issuer">DeepLearning.AI / Stanford</p>
+										</div>
+									</div>
+									<div class="cert-meta">
+										<span><i class="far fa-calendar"></i> Janvier 2025</span>
+										<span><i class="fas fa-hashtag"></i> DL-AI-ML-2025</span>
+									</div>
+									<p class="cert-desc">Spécialisation en Machine Learning avec Andrew Ng : algorithmes, réseaux de neurones, et intelligence artificielle.</p>
+									<div class="cert-skills">
+										<span class="skill-tag">Machine Learning</span>
+										<span class="skill-tag">Deep Learning</span>
+										<span class="skill-tag">TensorFlow</span>
+									</div>
+									<a href="assets/certifications/machine-learning-cert.pdf" class="cert-verify-btn" target="_blank">
+										<i class="fas fa-external-link-alt"></i> Vérifier la certification
+									</a>
+								</div>
+							</article>
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer" class="professional-footer" id="contact">
+					<div class="footer-container">
+						<div class="footer-content">
+							<div class="footer-section">
+								<h3><i class="fas fa-map-marker-alt"></i> Localisation</h3>
+								<div class="contact-info">
+									<i class="fas fa-city"></i>
+									<div>
+										<h4>Mohammedia, Maroc</h4>
+										<p>Disponible pour opportunités nationales & internationales</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="footer-section">
+								<h3><i class="fas fa-envelope"></i> Contact</h3>
+								<div class="contact-info">
+									<i class="fas fa-phone"></i>
+									<div>
+										<h4>Téléphone</h4>
+										<a href="tel:+212710020677">+212 710-020677</a>
+									</div>
+								</div>
+								<div class="contact-info">
+									<i class="fas fa-envelope"></i>
+									<div>
+										<h4>Email</h4>
+										<a href="mailto:hayat.akarzabi@gmail.com">hayat.akarzabi@gmail.com</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="footer-section">
+								<h3><i class="fas fa-share-alt"></i> Réseaux</h3>
+								<div class="social-links">
+									<a href="https://linkedin.com/in/hayat-akarzabi" class="social-link linkedin" target="_blank">
+										<i class="fab fa-linkedin"></i>
+										<span>LinkedIn</span>
+									</a>
+									<a href="https://github.com/HayatAkarzabi" class="social-link github" target="_blank">
+										<i class="fab fa-github"></i>
+										<span>GitHub</span>
+									</a>
+									<a href="assets/docs/CV__Hayat_Akarzabi_.pdf" class="social-link cv" download>
+										<i class="fas fa-file-download"></i>
+										<span>Télécharger CV</span>
+									</a>
+								</div>
+							</div>
+							
+							<div class="footer-section">
+								<h3><i class="fas fa-bolt"></i> Disponibilité</h3>
+								<div class="availability">
+									<div class="status-indicator">
+										<div class="status-dot available"></div>
+										<span>Recherche Stage PFA</span>
+									</div>
+									<p>Disponible à partir de Juillet 2025</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="footer-bottom">
+							<div class="copyright">
+								<p>&copy; 2025 Hayat Akarzazi. Tous droits réservés.</p>
+								<p class="design-credit">Design: <a href="https://html5up.net">HTML5 UP</a> | Développé avec passion</p>
+							</div>
+							
+							<div class="footer-actions">
+								<a href="#contact" class="btn-contact">
+									<i class="fas fa-paper-plane"></i>
+									<span>Me Contacter</span>
+								</a>
+								<a href="index.html" class="btn-home">
+									<i class="fas fa-home"></i>
+									<span>Accueil</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</footer>
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul>
+						<li>&copy; 2025 Hayat Akarzazi</li>
+						<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						<li>Développé avec passion</li>
+					</ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				// Animation pour les cartes de certification
+				document.addEventListener('DOMContentLoaded', function() {
+					const certCards = document.querySelectorAll('.cert-article');
+					
+					certCards.forEach((card, index) => {
+						card.style.opacity = '0';
+						card.style.transform = 'translateY(20px)';
+						
+						setTimeout(() => {
+							card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+							card.style.opacity = '1';
+							card.style.transform = 'translateY(0)';
+						}, index * 150);
+					});
+					
+					// Animation des barres de compétences
+					const skillBars = document.querySelectorAll('.skill-level');
+					
+					const observer = new IntersectionObserver((entries) => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								const skillLevel = entry.target;
+								const width = skillLevel.style.width;
+								skillLevel.style.width = '0';
+								setTimeout(() => {
+									skillLevel.style.width = width;
+								}, 300);
+								observer.unobserve(skillLevel);
+							}
+						});
+					}, { threshold: 0.5 });
+					
+					skillBars.forEach(bar => observer.observe(bar));
+					
+					// Fix pour la navigation
+					const navLinks = document.querySelectorAll('#nav .links a');
+					navLinks.forEach(link => {
+						link.addEventListener('click', function(e) {
+							if (this.getAttribute('href').startsWith('#')) {
+								e.preventDefault();
+								const targetId = this.getAttribute('href').substring(1);
+								const targetElement = document.getElementById(targetId);
+								if (targetElement) {
+									targetElement.scrollIntoView({ behavior: 'smooth' });
+								}
+							}
+						});
+					});
+				});
+			</script>
+
+	</body>
+</html>

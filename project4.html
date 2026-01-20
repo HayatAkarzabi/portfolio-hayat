@@ -1,0 +1,571 @@
+<!DOCTYPE HTML>
+<!--
+	Projet 4 - Dashboard Power BI - Stage PFA - Traitement d'État Civil
+-->
+<html>
+	<head>
+		<title>Stage PFA - Dashboard Power BI | Hayat Akarzazi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Hayat Akarzazi</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Accueil</a></li>
+							<li class="active"><a href="project4.html">Stage Power BI</a></li>
+							<li><a href="index.html#projects">Tous les Projets</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://linkedin.com/in/hayat-akarzabi" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/HayatAkarzabi" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:hayat.akarzabi@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Avril - Juin 2025</span>
+									<h1>Dashboard Power BI pour<br />
+									Traitement d'État Civil</h1>
+									<p>Stage PFA - Conception et développement d'un tableau de bord interactif<br />
+									Analyse des données d'actes d'état civil avec PostgreSQL et Power BI</p>
+								</header>
+								
+								<div class="image main"><img src="images/powerbi-dashboard.png" alt="Dashboard Power BI État Civil" /></div>
+								
+								<!-- Rapport Stage -->
+								<div class="box" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); color: white;">
+									<h3><i class="fas fa-graduation-cap"></i> Stage PFA - Analyse de données d'État Civil</h3>
+									<p>Conception et mise en place d'une solution BI complète pour l'analyse des actes d'état civil</p>
+									<a href="assets/docs/rapport-stage-etat-civil.pdf" class="button primary icon solid fa-file-pdf" style="margin: 10px; background: white; color: #1b5e20;">Télécharger le Rapport</a>
+									<a href="#dashboard-demo" class="button icon solid fa-chart-line" style="margin: 10px; background: rgba(255,255,255,0.2); color: white;">Voir le Dashboard</a>
+								</div>
+
+								<h2>Contexte du Projet</h2>
+								<p>Dans le cadre de mon stage PFA, j'ai développé un tableau de bord Power BI pour analyser les données du système <strong>webman_prod</strong> de traitement d'actes d'état civil. L'objectif était de centraliser et visualiser les données de 15 provinces, 220 bureaux, et plus de 3 millions d'actes traités.</p>
+								
+								<h2>Processus ETL Implémenté</h2>
+								<div class="box">
+									<h3>Extract - Transform - Load</h3>
+									<div class="row">
+										<div class="col-4 col-12-small">
+											<h4>1. Extraction</h4>
+											<ul>
+												<li><strong>PostgreSQL:</strong> Base principale webman_prod</li>
+												<li><strong>MySQL:</strong> Données historiques</li>
+												<li><strong>API REST:</strong> Données temps réel</li>
+												<li><strong>Fichiers CSV/JSON:</strong> Exports manuels</li>
+											</ul>
+										</div>
+										<div class="col-4 col-12-small">
+											<h4>2. Transformation</h4>
+											<ul>
+												<li>Nettoyage des données</li>
+												<li>Normalisation des formats</li>
+												<li>Création de mesures DAX</li>
+												<li>Établissement des relations</li>
+												<li>Gestion des valeurs manquantes</li>
+											</ul>
+										</div>
+										<div class="col-4 col-12-small">
+											<h4>3. Chargement</h4>
+											<ul>
+												<li>Modèle de données Power BI</li>
+												<li>Actualisation automatique</li>
+												<li>Sécurité par niveau (RLS)</li>
+												<li>Optimisation des performances</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<h2>Architecture Technique</h2>
+								<div class="table-wrapper">
+									<table class="alt">
+										<thead>
+											<tr>
+												<th>Composant</th>
+												<th>Technologie</th>
+												<th>Configuration</th>
+												<th>Rôle</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>Base de données</strong></td>
+												<td>PostgreSQL</td>
+												<td>localhost, user_simple/Admin</td>
+												<td>Stockage principal des données</td>
+											</tr>
+											<tr>
+												<td><strong>ETL Tool</strong></td>
+												<td>Power Query (M Language)</td>
+												<td>Transformations avancées</td>
+												<td>Nettoyage et préparation</td>
+											</tr>
+											<tr>
+												<td><strong>Calculs métier</strong></td>
+												<td>DAX (Data Analysis Expressions)</td>
+												<td>Mesures et colonnes calculées</td>
+												<td>Analyse et indicateurs</td>
+											</tr>
+											<tr>
+												<td><strong>Visualisation</strong></td>
+												<td>Power BI Desktop/Service</td>
+												<td>Version locale et cloud</td>
+												<td>Interface utilisateur</td>
+											</tr>
+											<tr>
+												<td><strong>API Intégration</strong></td>
+												<td>REST API</td>
+												<td>JWT Authentication</td>
+												<td>Données temps réel</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h2>Connexion aux Sources de Données</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Connexion PostgreSQL</h3>
+										<pre><code>Source: PostgreSQL Database
+Serveur: localhost
+Base: webman_prod
+Authentification: Utilisateur/Mot de passe
+Utilisateur: user_simple
+Mot de passe: Admin****
+Port: 5432</code></pre>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Connexion via URL/API</h3>
+										<pre><code>URL: https://webman_prod/api/v1/export
+Paramètres: 
+  format=json
+  columns=id,date,type,statut
+  date_from=$(DateDebut)
+Authentification: JWT Token
+Fréquence: Actualisation toutes les 6h</code></pre>
+									</div>
+								</div>
+
+								<h2>Mesures DAX Clés</h2>
+								<div class="box">
+									<h4>Indicateurs de Performance</h4>
+									<pre><code>// Taux de rejet par bureau
+Taux_Rejet = 
+DIVIDE(
+    COUNTROWS(FILTER(Rejets, Rejets[statut] = "Rejeté")),
+    COUNTROWS(Rejets),
+    0
+)
+
+// Nombre d'actes traités aujourd'hui
+ActesAujourdhui = 
+CALCULATE(
+    COUNTROWS(Actes),
+    Actes[date] = TODAY()
+)
+
+// Performance comparative bureaux
+PerformanceRelative = 
+VAR MoyenneGénérale = AVERAGEX(ALL(Bureaux), [Taux_Validation])
+RETURN
+DIVIDE([Taux_Validation], MoyenneGénérale, 0)
+
+// Tendance sur 30 jours
+Tendance30Jours = 
+VAR Actuels = [ActesTraites]
+VAR Passés = CALCULATE([ActesTraites], DATEADD(Dates[Date], -30, DAY))
+RETURN
+DIVIDE(Actuels - Passés, Passés, 0)</code></pre>
+								</div>
+
+								<h2 id="dashboard-demo">Tableau de Bord Principal</h2>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-12">
+											<span class="image fit">
+												<img src="images/pic05.jpg" alt="Dashboard Principal" />
+												<p class="image-caption" style="text-align: center; font-style: italic;">Dashboard principal - Analyse des actes d'état civil</p>
+											</span>
+										</div>
+									</div>
+								</div>
+
+								<h3>Indicateurs Clés (KPI)</h3>
+								<div class="row">
+									<div class="col-3 col-6-small">
+										<div class="kpi-card">
+											<h4>15</h4>
+											<p>Provinces</p>
+											<small>Couverture géographique</small>
+										</div>
+									</div>
+									<div class="col-3 col-6-small">
+										<div class="kpi-card">
+											<h4>220</h4>
+											<p>Bureaux</p>
+											<small>Points de service</small>
+										</div>
+									</div>
+									<div class="col-3 col-6-small">
+										<div class="kpi-card">
+											<h4>18K</h4>
+											<p>Lots</p>
+											<small>Travaux groupés</small>
+										</div>
+									</div>
+									<div class="col-3 col-6-small">
+										<div class="kpi-card">
+											<h4>3M</h4>
+											<p>Actes</p>
+											<small>Documents traités</small>
+										</div>
+									</div>
+								</div>
+
+								<h2>Visualisations Implémentées</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Graphiques Principaux</h3>
+										<ul>
+											<li><strong>Évolution temporelle:</strong> Courbes des actes traités par jour/mois</li>
+											<li><strong>Répartition des rejets:</strong> Camembert par motif de rejet</li>
+											<li><strong>Performance bureaux:</strong> Histogrammes comparatifs</li>
+											<li><strong>Carte géographique:</strong> Visualisation par province</li>
+											<li><strong>Matrice détaillée:</strong> Tableau croisé dynamique</li>
+											<li><strong>Graphiques en cascade:</strong> Analyse des écarts</li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Fonctionnalités Interactives</h3>
+										<ul>
+											<li><strong>Sélection temporelle:</strong> Jour/Semaine/Mois/Année</li>
+											<li><strong>Filtrage géographique:</strong> Province → Bureau</li>
+											<li><strong>Filtres croisés:</strong> Interaction entre graphiques</li>
+											<li><strong>Drill-through:</strong> Navigation vers le détail</li>
+											<li><strong>Tooltips avancés:</strong> Informations contextuelles</li>
+											<li><strong>Bookmarks:</strong> Sauvegarde des vues</li>
+										</ul>
+									</div>
+								</div>
+
+								<h2>Analyse et Insights Découverts</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<div class="insight-card" style="background: #e8f5e9; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+											<h4><i class="fas fa-chart-line" style="color: #2e7d32;"></i> Pic d'Activité</h4>
+											<p>Identification d'un pic d'activité en fin de mois avec +45% de traitement d'actes</p>
+										</div>
+										<div class="insight-card" style="background: #fff3e0; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+											<h4><i class="fas fa-exclamation-triangle" style="color: #f57c00;"></i> Motifs de Rejet</h4>
+											<p>68% des rejets concernent seulement 3 motifs principaux (champ manquant, signature absente, date erronée)</p>
+										</div>
+									</div>
+									<div class="col-6 col-12-small">
+										<div class="insight-card" style="background: #e3f2fd; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+											<h4><i class="fas fa-balance-scale" style="color: #1976d2;"></i> Variation Performance</h4>
+											<p>Écart important entre bureaux : taux de saisie variant de 12% à 87%</p>
+										</div>
+										<div class="insight-card" style="background: #f3e5f5; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+											<h4><i class="fas fa-user-check" style="color: #7b1fa2;"></i> Corrélation UX/Qualité</h4>
+											<p>Corrélation positive entre expérience utilisateur et qualité de saisie (+0.72)</p>
+										</div>
+									</div>
+								</div>
+
+								<h2>Résultats et Impact</h2>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Métrique</th>
+												<th>Avant</th>
+												<th>Après</th>
+												<th>Amélioration</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Temps d'analyse hebdomadaire</td>
+												<td>40 heures</td>
+												<td>6 heures</td>
+												<td><span class="improvement">85%</span></td>
+											</tr>
+											<tr>
+												<td>Qualité des décisions</td>
+												<td>Basée sur intuition</td>
+												<td>Data-driven</td>
+												<td><span class="improvement">100%</span></td>
+											</tr>
+											<tr>
+												<td>Détection anomalies</td>
+												<td>Manuelle</td>
+												<td>Automatique</td>
+												<td><span class="improvement">90%</span></td>
+											</tr>
+											<tr>
+												<td>Collaboration équipes</td>
+												<td>Limitée</td>
+												<td>Centralisée</td>
+												<td><span class="improvement">70%</span></td>
+											</tr>
+											<tr>
+												<td>Satisfaction utilisateurs</td>
+												<td>Moyenne</td>
+												<td>Élevée</td>
+												<td><span class="improvement">40%</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h2>Compétences Développées</h2>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-3 col-6-small">
+											<div class="skill-item">
+												<i class="fab fa-microsoft fa-2x"></i>
+												<h5>Power BI Avancé</h5>
+												<small>Desktop & Service</small>
+											</div>
+										</div>
+										<div class="col-3 col-6-small">
+											<div class="skill-item">
+												<i class="fas fa-database fa-2x"></i>
+												<h5>PostgreSQL/MySQL</h5>
+												<small>Connexion & Query</small>
+											</div>
+										</div>
+										<div class="col-3 col-6-small">
+											<div class="skill-item">
+												<i class="fas fa-code fa-2x"></i>
+												<h5>DAX & Power Query</h5>
+												<small>Langages ETL</small>
+											</div>
+										</div>
+										<div class="col-3 col-6-small">
+											<div class="skill-item">
+												<i class="fas fa-chart-bar fa-2x"></i>
+												<h5>Data Visualization</h5>
+												<small>Best Practices</small>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<h2>Perspectives et Recommandations</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>À court terme</h3>
+										<ul>
+											<li>Intégration de données météo pour analyse d'impact</li>
+											<li>Alertes automatiques sur anomalies détectées</li>
+											<li>Version mobile pour les agents terrain</li>
+											<li>Automatisation des exports PDF</li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>À moyen terme</h3>
+										<ul>
+											<li>Prédictions avec Machine Learning (Azure)</li>
+											<li>Intégration Power Apps pour workflows</li>
+											<li>Tableau de bord en temps réel</li>
+											<li>Formation des utilisateurs avancés</li>
+										</ul>
+									</div>
+								</div>
+
+								<h2>Gallerie du Projet</h2>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-4">
+											<span class="image fit">
+												<img src="images/connexion-postgresql.png" alt="Connexion PostgreSQL" />
+												<small>Configuration PostgreSQL</small>
+											</span>
+										</div>
+										<div class="col-4">
+											<span class="image fit">
+												<img src="images/power-query-transform.png" alt="Transformations Power Query" />
+												<small>Transformations Power Query</small>
+											</span>
+										</div>
+										<div class="col-4">
+											<span class="image fit">
+												<img src="images/dashboard-filters.png" alt="Filtres interactifs" />
+												<small>Filtres interactifs</small>
+											</span>
+										</div>
+										<div class="col-6">
+											<span class="image fit">
+												<img src="images/geographic-map.png" alt="Carte géographique" />
+												<small>Carte par province</small>
+											</span>
+										</div>
+										<div class="col-6">
+											<span class="image fit">
+												<img src="images/time-analysis.png" alt="Analyse temporelle" />
+												<small>Évolution temporelle</small>
+											</span>
+										</div>
+									</div>
+								</div>
+
+								<!-- Boutons de navigation -->
+								<ul class="actions special" style="margin-top: 2rem;">
+									<li><a href="project3.html" class="button large">← Projet Précédent</a></li>
+									<li><a href="index.html#projects" class="button">Retour aux Projets</a></li>
+									<li><a href="index.html#contact" class="button large">Me Contacter →</a></li>
+								</ul>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>Technologies Maîtrisées</h3>
+							<div class="tech-tags">
+								<span class="tag">Power BI Desktop</span>
+								<span class="tag">Power BI Service</span>
+								<span class="tag">PostgreSQL</span>
+								<span class="tag">MySQL</span>
+								<span class="tag">DAX</span>
+								<span class="tag">Power Query</span>
+								<span class="tag">API REST</span>
+								<span class="tag">Data Modeling</span>
+								<span class="tag">ETL Processes</span>
+							</div>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Scope du Projet</h3>
+								<p><strong>Volume de données:</strong> 3M+ actes<br />
+								<strong>Période analysée:</strong> 3 ans<br />
+								<strong>Utilisateurs impactés:</strong> 500+<br />
+								<strong>Durée du stage:</strong> 2 mois</p>
+							</section>
+							<section>
+								<h3>Livrables Produits</h3>
+								<p>8 Dashboards interactifs<br />
+								Documentation technique<br />
+								Guide utilisateur<br />
+								Rapport d'analyse complet<br />
+								Plan de maintenance</p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Hayat Akarzazi 2025</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<style>
+				.kpi-card {
+					text-align: center;
+					padding: 1.5rem;
+					background: #f8f9fa;
+					border-radius: 10px;
+					margin-bottom: 1rem;
+					border: 2px solid #e9ecef;
+				}
+				
+				.kpi-card h4 {
+					font-size: 2.5rem;
+					margin: 0;
+					color: #2e7d32;
+					font-weight: bold;
+				}
+				
+				.kpi-card p {
+					font-size: 1.1rem;
+					margin: 0.5rem 0;
+					font-weight: 600;
+				}
+				
+				.kpi-card small {
+					color: #6c757d;
+					font-size: 0.85rem;
+				}
+				
+				.improvement {
+					color: #2e7d32;
+					font-weight: bold;
+				}
+				
+				.skill-item {
+					text-align: center;
+					padding: 1rem;
+				}
+				
+				.skill-item i {
+					color: #2e7d32;
+					margin-bottom: 0.5rem;
+				}
+				
+				.skill-item h5 {
+					margin: 0.5rem 0;
+					font-size: 0.9rem;
+				}
+				
+				.skill-item small {
+					color: #6c757d;
+					font-size: 0.8rem;
+				}
+				
+				.tech-tags {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 0.5rem;
+				}
+				
+				.tag {
+					background: #e8f5e9;
+					color: #2e7d32;
+					padding: 0.3rem 0.8rem;
+					border-radius: 20px;
+					font-size: 0.85rem;
+					border: 1px solid #c8e6c9;
+				}
+				
+				.image-caption {
+					margin-top: 0.5rem;
+					color: #666;
+					font-size: 0.9rem;
+				}
+			</style>
+
+	</body>
+</html>

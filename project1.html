@@ -1,0 +1,1476 @@
+<!DOCTYPE HTML>
+<!--
+	Projet 1 - Application de Réservation de Tickets de Cinéma
+-->
+<html>
+	<head>
+		<title>Projet 1 - Cinéma Réservation | Hayat Akarzazi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Hayat Akarzazi</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="project1.html">Cinéma Réservation</a></li>
+							<li><a href="index.html">Accueil</a></li>
+							<li><a href="index.html#projects">Tous les Projets</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://linkedin.com/in/hayat-akarzabi" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/HayatAkarzabi" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:hayat.akarzabi@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">2024</span>
+									<h1>AniVerse - Application de<br />
+									Réservation de Tickets de Cinéma</h1>
+									<p>Plateforme web complète avec backend Java JEE et architecture MVC<br />
+									Gestion des films, séances, réservations et paiements en ligne</p>
+								</header>
+								
+								<div class="image main"><img src="images/cinebook-dashboard.png" alt="Dashboard CinéBook" /></div>
+								
+								<!-- GitHub Links -->
+								<div class="box" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white;">
+									<h3><i class="fas fa-film"></i> Application Cinéma Complète</h3>
+									<p>Code source backend et frontend disponibles sur GitHub :</p>
+									<a href="https://github.com/HayatAkarzabi/AnoVerseProject" class="button primary icon brands fa-github" target="_blank" style="margin: 10px; background: white; color: #2575fc;">Backend Java JEE</a>
+									<a href="https://github.com/HayatAkarzabi/AnoVerseProject" class="button icon brands fa-github" target="_blank" style="margin: 10px; background: #333; color: white;">Frontend JSP</a>
+								</div>
+
+								<h2>Description du Projet</h2>
+								<p>CinéBook est une plateforme web de réservation de tickets de cinéma offrant une expérience utilisateur fluide, sécurisée et intuitive. L'application se divise en deux interfaces distinctes avec des fonctionnalités spécifiques pour les utilisateurs et les administrateurs.</p>
+								
+								<h2>Fonctionnalités Principales</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<div class="feature-box" style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+											<h3><i class="fas fa-user"></i> Côté Utilisateur</h3>
+											<ul>
+												<li><strong>Consultation des films disponibles</strong> : Navigation avec filtres par genre, date et horaire</li>
+												<li><strong>Sélection des séances</strong> : Choix de séances spécifiques avec visualisation des places disponibles</li>
+												<li><strong>Réservation de billets</strong> : Réservation directe en ligne avec sélection de places</li>
+												<li><strong>Gestion des réservations</strong> : Consultation, modification et annulation des réservations</li>
+												<li><strong>Paiement en ligne</strong> : Système de paiement sécurisé</li>
+												<li><strong>Notifications</strong> : Alertes par email pour confirmations et rappels</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-6 col-12-small">
+										<div class="feature-box" style="background: #e3f2fd; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+											<h3><i class="fas fa-user-shield"></i> Côté Administrateur</h3>
+											<ul>
+												<li><strong>Gestion des films</strong> : CRUD complet (ajout, modification, suppression)</li>
+												<li><strong>Gestion des salles</strong> : Configuration des capacités et dispositions</li>
+												<li><strong>Programmation des séances</strong> : Création et modification des horaires</li>
+												<li><strong>Suivi des réservations</strong> : Vue d'ensemble des réservations en temps réel</li>
+												<li><strong>Gestion des utilisateurs</strong> : Administration des comptes clients</li>
+												<li><strong>Reporting</strong> : Génération de rapports de ventes et fréquentation</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<h2>Architecture du Système</h2>
+								<div class="box">
+									<h3><i class="fas fa-sitemap"></i> Architecture MVC (Model-View-Controller)</h3>
+									<p>L'application suit le modèle MVC pour assurer une séparation claire entre la gestion des données, la logique de contrôle et la présentation.</p>
+									
+									<div class="architecture-diagram">
+										<div class="arch-layer" style="background: #4CAF50;">
+											<h4>Vue (View)</h4>
+											<p>JSP, HTML, CSS, JavaScript</p>
+											<small>Interface utilisateur</small>
+										</div>
+										<div class="arch-arrow">↓</div>
+										<div class="arch-layer" style="background: #2196F3;">
+											<h4>Contrôleur (Controller)</h4>
+											<p>Servlets, Filters, REST Controllers</p>
+											<small>Logique métier</small>
+										</div>
+										<div class="arch-arrow">↓</div>
+										<div class="arch-layer" style="background: #FF9800;">
+											<h4>Modèle (Model)</h4>
+											<p>Entities, DAO, Services</p>
+											<small>Données et persistance</small>
+										</div>
+										<div class="arch-arrow">↓</div>
+										<div class="arch-layer" style="background: #9C27B0;">
+											<h4>Base de Données</h4>
+											<p>MySQL avec JPA/Hibernate</p>
+											<small>Stockage persistant</small>
+										</div>
+									</div>
+								</div>
+
+								<h2>Structure des Packages</h2>
+								<div class="table-wrapper">
+									<table class="alt">
+										<thead>
+											<tr>
+												<th>Package</th>
+												<th>Description</th>
+												<th>Composants Principaux</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>Controller</strong></td>
+												<td>Contrôleurs REST et filtres de sécurité</td>
+												<td>CORSFilter, FilmController, ReservationController, UserController</td>
+											</tr>
+											<tr>
+												<td><strong>Dao</strong></td>
+												<td>Gestion de l'accès aux données avec JPA</td>
+												<td>FilmDao, UserDao, ReservationDao (Implémentation JPA)</td>
+											</tr>
+											<tr>
+												<td><strong>Metier</strong></td>
+												<td>Entités du modèle métier (Entities)</td>
+												<td>Film, Reservation, User, Salle, Seance, Place, Paiement, Notification</td>
+											</tr>
+											<tr>
+												<td><strong>Service</strong></td>
+												<td>Servlets principales pour le traitement des requêtes</td>
+												<td>FilmServlet, LoginServlet, SignUpServlet, AjouterFilmServlet</td>
+											</tr>
+											<tr>
+												<td><strong>Utils</strong></td>
+												<td>Utilitaires et gestion de la sérialisation</td>
+												<td>SerializationManager, DateUtils, ValidationUtils</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								
+								<h2>Modèle Métier (Package Metier)</h2>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Classe</th>
+												<th>Description</th>
+												<th>Attributs Principaux</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>Film</strong></td>
+												<td>Représente un film avec ses informations détaillées</td>
+												<td>id, titre, réalisateur, acteurs, durée, genre, description, affiche</td>
+											</tr>
+											<tr>
+												<td><strong>Salle</strong></td>
+												<td>Décrit une salle de cinéma avec sa capacité et configuration</td>
+												<td>id, numéro, capacité, type (2D/3D/IMAX), équipements</td>
+											</tr>
+											<tr>
+												<td><strong>Seance</strong></td>
+												<td>Représente une séance avec date, version et salle associée</td>
+												<td>id, dateHeure, film, salle, placesDisponibles, prix</td>
+											</tr>
+											<tr>
+												<td><strong>Place</strong></td>
+												<td>Gestion des places dans une salle (numéro, disponibilité)</td>
+												<td>id, numéro, rangée, salle, disponibilité</td>
+											</tr>
+											<tr>
+												<td><strong>Reservation</strong></td>
+												<td>Contient les informations de réservation d'un utilisateur</td>
+												<td>id, dateReservation, statut, utilisateur, séance, places, prixTotal</td>
+											</tr>
+											<tr>
+												<td><strong>User</strong></td>
+												<td>Gère les utilisateurs (clients et administrateurs)</td>
+												<td>id, email, motDePasse, nom, prénom, rôle, téléphone</td>
+											</tr>
+											<tr>
+												<td><strong>Paiement</strong></td>
+												<td>Traite les paiements associés aux réservations</td>
+												<td>id, montant, typePaiement, datePaiement, statut, réservation</td>
+											</tr>
+											<tr>
+												<td><strong>Notification</strong></td>
+												<td>Envoi de notifications aux utilisateurs</td>
+												<td>id, type, contenu, destinataire, dateEnvoi, statut</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h2>Code Exemple - Entité Film</h2>
+								<div class="box">
+									<h4><i class="fas fa-code"></i> Classe Film.java (Entity JPA)</h4>
+									<pre><code class="language-java">package com.cinebook.metier;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
+
+@Entity
+@Table(name = "films")
+@NamedQueries({
+    @NamedQuery(name = "Film.findAll", query = "SELECT f FROM Film f"),
+    @NamedQuery(name = "Film.findByGenre", query = "SELECT f FROM Film f WHERE f.genre = :genre"),
+    @NamedQuery(name = "Film.findByTitre", query = "SELECT f FROM Film f WHERE f.titre LIKE :titre")
+})
+public class Film implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "film_id")
+    private Long id;
+    
+    @Column(name = "titre", nullable = false, length = 255)
+    private String titre;
+    
+    @Column(name = "realisateur", length = 150)
+    private String realisateur;
+    
+    @Column(name = "acteurs", length = 500)
+    private String acteurs;
+    
+    @Column(name = "duree")
+    private Integer duree; // en minutes
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "genre")
+    private GenreFilm genre;
+    
+    @Column(name = "description", length = 2000)
+    private String description;
+    
+    @Column(name = "affiche_url")
+    private String afficheUrl;
+    
+    @Column(name = "date_sortie")
+    private java.sql.Date dateSortie;
+    
+    @Column(name = "note_presse")
+    private Double notePresse;
+    
+    @Column(name = "age_minimum")
+    private Integer ageMinimum;
+    
+    @OneToMany(mappedBy = "film", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Seance> seances;
+    
+    // Constructeurs
+    public Film() {}
+    
+    public Film(String titre, String realisateur, Integer duree, GenreFilm genre) {
+        this.titre = titre;
+        this.realisateur = realisateur;
+        this.duree = duree;
+        this.genre = genre;
+    }
+    
+    // Getters et Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    
+    public String getTitre() { return titre; }
+    public void setTitre(String titre) { this.titre = titre; }
+    
+    public String getRealisateur() { return realisateur; }
+    public void setRealisateur(String realisateur) { this.realisateur = realisateur; }
+    
+    public String getActeurs() { return acteurs; }
+    public void setActeurs(String acteurs) { this.acteurs = acteurs; }
+    
+    public Integer getDuree() { return duree; }
+    public void setDuree(Integer duree) { this.duree = duree; }
+    
+    public GenreFilm getGenre() { return genre; }
+    public void setGenre(GenreFilm genre) { this.genre = genre; }
+    
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    
+    public String getAfficheUrl() { return afficheUrl; }
+    public void setAfficheUrl(String afficheUrl) { this.afficheUrl = afficheUrl; }
+    
+    public java.sql.Date getDateSortie() { return dateSortie; }
+    public void setDateSortie(java.sql.Date dateSortie) { this.dateSortie = dateSortie; }
+    
+    public Double getNotePresse() { return notePresse; }
+    public void setNotePresse(Double notePresse) { this.notePresse = notePresse; }
+    
+    public Integer getAgeMinimum() { return ageMinimum; }
+    public void setAgeMinimum(Integer ageMinimum) { this.ageMinimum = ageMinimum; }
+    
+    public List<Seance> getSeances() { return seances; }
+    public void setSeances(List<Seance> seances) { this.seances = seances; }
+    
+    // Méthodes utilitaires
+    public String getDureeFormatee() {
+        if (duree == null) return "N/A";
+        int heures = duree / 60;
+        int minutes = duree % 60;
+        return heures + "h" + (minutes < 10 ? "0" : "") + minutes;
+    }
+    
+    @Override
+    public String toString() {
+        return "Film{" +
+                "id=" + id +
+                ", titre='" + titre + '\'' +
+                ", realisateur='" + realisateur + '\'' +
+                ", duree=" + duree +
+                ", genre=" + genre +
+                '}';
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Film)) return false;
+        Film film = (Film) o;
+        return id != null && id.equals(film.id);
+    }
+    
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+}
+
+// Enum pour les genres de films
+enum GenreFilm {
+    ACTION,
+    COMEDIE,
+    DRAME,
+    SCIENCE_FICTION,
+    HORREUR,
+    ROMANCE,
+    ANIMATION,
+    DOCUMENTAIRE,
+    THRILLER,
+    AVENTURE
+}</code></pre>
+								</div>
+
+								<h2>Code Exemple - FilmController REST</h2>
+								<div class="box">
+									<h4><i class="fas fa-code"></i> FilmController.java (REST API)</h4>
+									<pre><code class="language-java">package com.cinebook.controller;
+
+import com.cinebook.metier.Film;
+import com.cinebook.service.FilmService;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.List;
+
+@Path("/films")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+public class FilmController {
+    
+    private final FilmService filmService = new FilmService();
+    
+    @GET
+    @Path("/all")
+    public Response getAllFilms() {
+        try {
+            List<Film> films = filmService.getAllFilms();
+            return Response.ok(films).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Erreur lors de la récupération des films: " + e.getMessage())
+                    .build();
+        }
+    }
+    
+    @GET
+    @Path("/{id}")
+    public Response getFilmById(@PathParam("id") Long id) {
+        try {
+            Film film = filmService.getFilmById(id);
+            if (film == null) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("Film non trouvé avec l'ID: " + id)
+                        .build();
+            }
+            return Response.ok(film).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Erreur lors de la récupération du film: " + e.getMessage())
+                    .build();
+        }
+    }
+    
+    @POST
+    @Path("/create")
+    public Response createFilm(Film film) {
+        try {
+            // Validation des données
+            if (film.getTitre() == null || film.getTitre().trim().isEmpty()) {
+                return Response.status(Response.Status.BAD_REQUEST)
+                        .entity("Le titre du film est obligatoire")
+                        .build();
+            }
+            
+            if (film.getDuree() == null || film.getDuree() <= 0) {
+                return Response.status(Response.Status.BAD_REQUEST)
+                        .entity("La durée du film doit être positive")
+                        .build();
+            }
+            
+            Film createdFilm = filmService.createFilm(film);
+            return Response.status(Response.Status.CREATED)
+                    .entity(createdFilm)
+                    .build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Erreur lors de la création du film: " + e.getMessage())
+                    .build();
+        }
+    }
+    
+    @PUT
+    @Path("/update/{id}")
+    public Response updateFilm(@PathParam("id") Long id, Film film) {
+        try {
+            film.setId(id); // S'assurer que l'ID est correct
+            Film updatedFilm = filmService.updateFilm(film);
+            
+            if (updatedFilm == null) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("Film non trouvé avec l'ID: " + id)
+                        .build();
+            }
+            
+            return Response.ok(updatedFilm).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Erreur lors de la mise à jour du film: " + e.getMessage())
+                    .build();
+        }
+    }
+    
+    @DELETE
+    @Path("/delete/{id}")
+    public Response deleteFilm(@PathParam("id") Long id) {
+        try {
+            boolean deleted = filmService.deleteFilm(id);
+            
+            if (!deleted) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("Film non trouvé avec l'ID: " + id)
+                        .build();
+            }
+            
+            return Response.ok().entity("Film supprimé avec succès").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Erreur lors de la suppression du film: " + e.getMessage())
+                    .build();
+        }
+    }
+    
+    @GET
+    @Path("/search")
+    public Response searchFilms(
+            @QueryParam("titre") String titre,
+            @QueryParam("genre") String genre,
+            @QueryParam("realisateur") String realisateur) {
+        
+        try {
+            List<Film> films = filmService.searchFilms(titre, genre, realisateur);
+            return Response.ok(films).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Erreur lors de la recherche: " + e.getMessage())
+                    .build();
+        }
+    }
+    
+    @GET
+    @Path("/now-playing")
+    public Response getNowPlayingFilms() {
+        try {
+            List<Film> films = filmService.getNowPlayingFilms();
+            return Response.ok(films).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Erreur lors de la récupération des films à l'affiche: " + e.getMessage())
+                    .build();
+        }
+    }
+    
+    @GET
+    @Path("/coming-soon")
+    public Response getComingSoonFilms() {
+        try {
+            List<Film> films = filmService.getComingSoonFilms();
+            return Response.ok(films).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Erreur lors de la récupération des films à venir: " + e.getMessage())
+                    .build();
+        }
+    }
+}</code></pre>
+								</div>
+
+								<h2>Code Exemple - FilmServlet</h2>
+								<div class="box">
+									<h4><i class="fas fa-code"></i> FilmServlet.java (Servlet Classique)</h4>
+									<pre><code class="language-java">package com.cinebook.service;
+
+import com.cinebook.metier.Film;
+import com.cinebook.dao.FilmDao;
+import com.cinebook.dao.impl.ImplFilm;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet(name = "FilmServlet", urlPatterns = {
+    "/films",
+    "/films/add",
+    "/films/edit",
+    "/films/delete",
+    "/films/details"
+})
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+    maxFileSize = 1024 * 1024 * 10,      // 10MB
+    maxRequestSize = 1024 * 1024 * 50    // 50MB
+)
+public class FilmServlet extends HttpServlet {
+    
+    private FilmDao filmDao;
+    
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        filmDao = new ImplFilm(); // Injection de dépendance
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        String action = request.getServletPath();
+        
+        try {
+            switch (action) {
+                case "/films":
+                    listFilms(request, response);
+                    break;
+                case "/films/add":
+                    showAddForm(request, response);
+                    break;
+                case "/films/edit":
+                    showEditForm(request, response);
+                    break;
+                case "/films/delete":
+                    deleteFilm(request, response);
+                    break;
+                case "/films/details":
+                    showFilmDetails(request, response);
+                    break;
+                default:
+                    listFilms(request, response);
+                    break;
+            }
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        String action = request.getServletPath();
+        
+        try {
+            switch (action) {
+                case "/films/add":
+                    addFilm(request, response);
+                    break;
+                case "/films/edit":
+                    updateFilm(request, response);
+                    break;
+                default:
+                    listFilms(request, response);
+                    break;
+            }
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+    
+    private void listFilms(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        try {
+            // Récupération des paramètres de filtrage
+            String genre = request.getParameter("genre");
+            String searchTerm = request.getParameter("search");
+            
+            List<Film> films;
+            
+            if (genre != null && !genre.isEmpty()) {
+                films = filmDao.findByGenre(genre);
+            } else if (searchTerm != null && !searchTerm.isEmpty()) {
+                films = filmDao.searchByTitle(searchTerm);
+            } else {
+                films = filmDao.findAll();
+            }
+            
+            // Pagination
+            int page = 1;
+            int recordsPerPage = 10;
+            
+            if (request.getParameter("page") != null) {
+                page = Integer.parseInt(request.getParameter("page"));
+            }
+            
+            int start = (page - 1) * recordsPerPage;
+            int end = Math.min(start + recordsPerPage, films.size());
+            
+            List<Film> filmsPage = films.subList(start, end);
+            int numberOfPages = (int) Math.ceil(films.size() * 1.0 / recordsPerPage);
+            
+            // Ajout des attributs à la requête
+            request.setAttribute("films", filmsPage);
+            request.setAttribute("currentPage", page);
+            request.setAttribute("numberOfPages", numberOfPages);
+            request.setAttribute("totalFilms", films.size());
+            request.setAttribute("selectedGenre", genre);
+            request.setAttribute("searchTerm", searchTerm);
+            
+            // Forward vers la page JSP
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/films/list.jsp");
+            dispatcher.forward(request, response);
+            
+        } catch (Exception e) {
+            request.setAttribute("errorMessage", "Erreur lors de la récupération des films: " + e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/views/error.jsp").forward(request, response);
+        }
+    }
+    
+    private void showAddForm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/films/add.jsp");
+        dispatcher.forward(request, response);
+    }
+    
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        try {
+            Long filmId = Long.parseLong(request.getParameter("id"));
+            Film film = filmDao.findById(filmId);
+            
+            if (film == null) {
+                request.setAttribute("errorMessage", "Film non trouvé avec l'ID: " + filmId);
+                request.getRequestDispatcher("/WEB-INF/views/error.jsp").forward(request, response);
+                return;
+            }
+            
+            request.setAttribute("film", film);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/films/edit.jsp");
+            dispatcher.forward(request, response);
+            
+        } catch (NumberFormatException e) {
+            request.setAttribute("errorMessage", "ID de film invalide");
+            request.getRequestDispatcher("/WEB-INF/views/error.jsp").forward(request, response);
+        }
+    }
+    
+    private void showFilmDetails(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        try {
+            Long filmId = Long.parseLong(request.getParameter("id"));
+            Film film = filmDao.findByIdWithSeances(filmId);
+            
+            if (film == null) {
+                request.setAttribute("errorMessage", "Film non trouvé avec l'ID: " + filmId);
+                request.getRequestDispatcher("/WEB-INF/views/error.jsp").forward(request, response);
+                return;
+            }
+            
+            request.setAttribute("film", film);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/films/details.jsp");
+            dispatcher.forward(request, response);
+            
+        } catch (NumberFormatException e) {
+            request.setAttribute("errorMessage", "ID de film invalide");
+            request.getRequestDispatcher("/WEB-INF/views/error.jsp").forward(request, response);
+        }
+    }
+    
+    private void addFilm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        try {
+            // Récupération des paramètres du formulaire
+            String titre = request.getParameter("titre");
+            String realisateur = request.getParameter("realisateur");
+            String acteurs = request.getParameter("acteurs");
+            String dureeStr = request.getParameter("duree");
+            String genre = request.getParameter("genre");
+            String description = request.getParameter("description");
+            
+            // Validation
+            if (titre == null || titre.trim().isEmpty()) {
+                request.setAttribute("errorMessage", "Le titre est obligatoire");
+                request.getRequestDispatcher("/WEB-INF/views/films/add.jsp").forward(request, response);
+                return;
+            }
+            
+            // Création de l'objet Film
+            Film film = new Film();
+            film.setTitre(titre);
+            film.setRealisateur(realisateur);
+            film.setActeurs(acteurs);
+            
+            if (dureeStr != null && !dureeStr.isEmpty()) {
+                film.setDuree(Integer.parseInt(dureeStr));
+            }
+            
+            film.setGenre(GenreFilm.valueOf(genre));
+            film.setDescription(description);
+            
+            // Gestion de l'upload de l'affiche
+            Part filePart = request.getPart("affiche");
+            if (filePart != null && filePart.getSize() > 0) {
+                String fileName = getFileName(filePart);
+                String uploadPath = getServletContext().getRealPath("") + "uploads";
+                
+                File uploadDir = new File(uploadPath);
+                if (!uploadDir.exists()) {
+                    uploadDir.mkdir();
+                }
+                
+                String filePath = uploadPath + File.separator + fileName;
+                filePart.write(filePath);
+                
+                film.setAfficheUrl("uploads/" + fileName);
+            }
+            
+            // Persistance
+            Film createdFilm = filmDao.create(film);
+            
+            // Redirection avec message de succès
+            request.getSession().setAttribute("successMessage", 
+                "Film '" + createdFilm.getTitre() + "' ajouté avec succès!");
+            response.sendRedirect(request.getContextPath() + "/films");
+            
+        } catch (Exception e) {
+            request.setAttribute("errorMessage", "Erreur lors de l'ajout du film: " + e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/views/films/add.jsp").forward(request, response);
+        }
+    }
+    
+    private void updateFilm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        try {
+            Long filmId = Long.parseLong(request.getParameter("id"));
+            Film existingFilm = filmDao.findById(filmId);
+            
+            if (existingFilm == null) {
+                request.setAttribute("errorMessage", "Film non trouvé");
+                request.getRequestDispatcher("/WEB-INF/views/error.jsp").forward(request, response);
+                return;
+            }
+            
+            // Mise à jour des attributs
+            existingFilm.setTitre(request.getParameter("titre"));
+            existingFilm.setRealisateur(request.getParameter("realisateur"));
+            existingFilm.setActeurs(request.getParameter("acteurs"));
+            existingFilm.setDescription(request.getParameter("description"));
+            
+            String dureeStr = request.getParameter("duree");
+            if (dureeStr != null && !dureeStr.isEmpty()) {
+                existingFilm.setDuree(Integer.parseInt(dureeStr));
+            }
+            
+            String genre = request.getParameter("genre");
+            if (genre != null && !genre.isEmpty()) {
+                existingFilm.setGenre(GenreFilm.valueOf(genre));
+            }
+            
+            // Mise à jour en base
+            Film updatedFilm = filmDao.update(existingFilm);
+            
+            request.getSession().setAttribute("successMessage", 
+                "Film '" + updatedFilm.getTitre() + "' modifié avec succès!");
+            response.sendRedirect(request.getContextPath() + "/films");
+            
+        } catch (Exception e) {
+            request.setAttribute("errorMessage", "Erreur lors de la modification: " + e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/views/films/edit.jsp").forward(request, response);
+        }
+    }
+    
+    private void deleteFilm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        try {
+            Long filmId = Long.parseLong(request.getParameter("id"));
+            boolean deleted = filmDao.delete(filmId);
+            
+            if (deleted) {
+                request.getSession().setAttribute("successMessage", 
+                    "Film supprimé avec succès!");
+            } else {
+                request.getSession().setAttribute("errorMessage", 
+                    "Erreur lors de la suppression du film");
+            }
+            
+            response.sendRedirect(request.getContextPath() + "/films");
+            
+        } catch (Exception e) {
+            request.setAttribute("errorMessage", "Erreur lors de la suppression: " + e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/views/films/list.jsp").forward(request, response);
+        }
+    }
+    
+    private String getFileName(Part part) {
+        String contentDisp = part.getHeader("content-disposition");
+        String[] tokens = contentDisp.split(";");
+        for (String token : tokens) {
+            if (token.trim().startsWith("filename")) {
+                return token.substring(token.indexOf("=") + 2, token.length() - 1);
+            }
+        }
+        return "";
+    }
+}</code></pre>
+								</div>
+
+								<h2>Base de Données MySQL</h2>
+								<div class="box">
+									<h4><i class="fas fa-database"></i> Script de création de la base</h4>
+									<pre><code class="language-sql">-- Base de données CinéBook
+CREATE DATABASE IF NOT EXISTS cinebook_db;
+USE cinebook_db;
+
+-- Table des utilisateurs
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    telephone VARCHAR(20),
+    role ENUM('CLIENT', 'ADMIN') DEFAULT 'CLIENT',
+    date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP,
+    last_login DATETIME,
+    is_active BOOLEAN DEFAULT TRUE,
+    INDEX idx_email (email),
+    INDEX idx_role (role)
+);
+
+-- Table des films
+CREATE TABLE films (
+    film_id INT PRIMARY KEY AUTO_INCREMENT,
+    titre VARCHAR(255) NOT NULL,
+    realisateur VARCHAR(150),
+    acteurs TEXT,
+    duree INT, -- en minutes
+    genre ENUM('ACTION', 'COMEDIE', 'DRAME', 'SCIENCE_FICTION', 
+               'HORREUR', 'ROMANCE', 'ANIMATION', 'DOCUMENTAIRE',
+               'THRILLER', 'AVENTURE'),
+    description TEXT,
+    affiche_url VARCHAR(500),
+    date_sortie DATE,
+    note_presse DECIMAL(3,1),
+    age_minimum INT DEFAULT 0,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_titre (titre),
+    INDEX idx_genre (genre),
+    INDEX idx_date_sortie (date_sortie)
+);
+
+-- Table des salles
+CREATE TABLE salles (
+    salle_id INT PRIMARY KEY AUTO_INCREMENT,
+    numero VARCHAR(20) NOT NULL,
+    capacite INT NOT NULL,
+    type_salle ENUM('STANDARD', 'IMAX', '4DX', 'VIP') DEFAULT 'STANDARD',
+    equipements TEXT,
+    is_active BOOLEAN DEFAULT TRUE,
+    INDEX idx_numero (numero)
+);
+
+-- Table des séances
+CREATE TABLE seances (
+    seance_id INT PRIMARY KEY AUTO_INCREMENT,
+    film_id INT NOT NULL,
+    salle_id INT NOT NULL,
+    date_heure DATETIME NOT NULL,
+    places_disponibles INT NOT NULL,
+    prix DECIMAL(6,2) NOT NULL,
+    version_film ENUM('VF', 'VOSTFR', 'VO') DEFAULT 'VF',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (film_id) REFERENCES films(film_id) ON DELETE CASCADE,
+    FOREIGN KEY (salle_id) REFERENCES salles(salle_id) ON DELETE CASCADE,
+    INDEX idx_film (film_id),
+    INDEX idx_date (date_heure),
+    INDEX idx_film_date (film_id, date_heure)
+);
+
+-- Table des places
+CREATE TABLE places (
+    place_id INT PRIMARY KEY AUTO_INCREMENT,
+    seance_id INT NOT NULL,
+    numero_place VARCHAR(10) NOT NULL,
+    rangee VARCHAR(5) NOT NULL,
+    type_place ENUM('STANDARD', 'VIP') DEFAULT 'STANDARD',
+    prix_supplement DECIMAL(5,2) DEFAULT 0.00,
+    is_disponible BOOLEAN DEFAULT TRUE,
+    FOREIGN KEY (seance_id) REFERENCES seances(seance_id) ON DELETE CASCADE,
+    UNIQUE KEY unique_place_seance (seance_id, numero_place, rangee),
+    INDEX idx_seance (seance_id),
+    INDEX idx_disponibilite (is_disponible)
+);
+
+-- Table des réservations
+CREATE TABLE reservations (
+    reservation_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    seance_id INT NOT NULL,
+    date_reservation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    nombre_places INT NOT NULL,
+    prix_total DECIMAL(8,2) NOT NULL,
+    statut ENUM('EN_ATTENTE', 'CONFIRMEE', 'ANNULEE', 'UTILISEE') DEFAULT 'EN_ATTENTE',
+    code_reservation VARCHAR(20) UNIQUE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (seance_id) REFERENCES seances(seance_id) ON DELETE CASCADE,
+    INDEX idx_user (user_id),
+    INDEX idx_seance (seance_id),
+    INDEX idx_statut (statut),
+    INDEX idx_code (code_reservation)
+);
+
+-- Table de liaison réservation/places
+CREATE TABLE reservation_places (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    reservation_id INT NOT NULL,
+    place_id INT NOT NULL,
+    FOREIGN KEY (reservation_id) REFERENCES reservations(reservation_id) ON DELETE CASCADE,
+    FOREIGN KEY (place_id) REFERENCES places(place_id) ON DELETE CASCADE,
+    UNIQUE KEY unique_reservation_place (reservation_id, place_id)
+);
+
+-- Table des paiements
+CREATE TABLE paiements (
+    paiement_id INT PRIMARY KEY AUTO_INCREMENT,
+    reservation_id INT NOT NULL,
+    montant DECIMAL(8,2) NOT NULL,
+    type_paiement ENUM('CARTE', 'PAYPAL', 'ESPECES') NOT NULL,
+    date_paiement DATETIME DEFAULT CURRENT_TIMESTAMP,
+    statut ENUM('EN_ATTENTE', 'PAYE', 'ECHEC', 'REMBOURSE') DEFAULT 'EN_ATTENTE',
+    reference_paiement VARCHAR(100) UNIQUE,
+    FOREIGN KEY (reservation_id) REFERENCES reservations(reservation_id) ON DELETE CASCADE,
+    INDEX idx_reservation (reservation_id),
+    INDEX idx_statut (statut),
+    INDEX idx_reference (reference_paiement)
+);
+
+-- Table des notifications
+CREATE TABLE notifications (
+    notification_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    type_notification ENUM('RESERVATION', 'ANNULATION', 'RAPPEL', 'NEWSLETTER') NOT NULL,
+    titre VARCHAR(255) NOT NULL,
+    contenu TEXT NOT NULL,
+    date_envoi DATETIME DEFAULT CURRENT_TIMESTAMP,
+    est_lu BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    INDEX idx_user (user_id),
+    INDEX idx_type (type_notification),
+    INDEX idx_date (date_envoi)
+);
+
+-- Vues utiles
+CREATE VIEW vue_films_a_l_affiche AS
+SELECT f.*, COUNT(s.seance_id) as nombre_seances
+FROM films f
+LEFT JOIN seances s ON f.film_id = s.film_id 
+    AND s.date_heure >= CURDATE()
+GROUP BY f.film_id
+HAVING nombre_seances > 0;
+
+CREATE VIEW vue_reservations_details AS
+SELECT r.*, 
+       u.nom, u.prenom, u.email,
+       f.titre as film_titre,
+       s.date_heure as date_seance,
+       sa.numero as salle_numero,
+       p.montant, p.type_paiement, p.statut as statut_paiement
+FROM reservations r
+JOIN users u ON r.user_id = u.user_id
+JOIN seances s ON r.seance_id = s.seance_id
+JOIN films f ON s.film_id = f.film_id
+JOIN salles sa ON s.salle_id = sa.salle_id
+LEFT JOIN paiements p ON r.reservation_id = p.reservation_id;
+
+-- Procédures stockées
+DELIMITER //
+CREATE PROCEDURE sp_creer_reservation(
+    IN p_user_id INT,
+    IN p_seance_id INT,
+    IN p_places_ids TEXT
+)
+BEGIN
+    DECLARE v_prix_total DECIMAL(8,2) DEFAULT 0;
+    DECLARE v_nombre_places INT DEFAULT 0;
+    DECLARE v_code_reservation VARCHAR(20);
+    
+    -- Calcul du prix total
+    SELECT SUM(prix_supplement + (SELECT prix FROM seances WHERE seance_id = p_seance_id))
+    INTO v_prix_total
+    FROM places
+    WHERE FIND_IN_SET(place_id, p_places_ids) > 0;
+    
+    -- Nombre de places
+    SET v_nombre_places = LENGTH(p_places_ids) - LENGTH(REPLACE(p_places_ids, ',', '')) + 1;
+    
+    -- Génération d'un code unique
+    SET v_code_reservation = UPPER(CONCAT('CINE', DATE_FORMAT(NOW(), '%y%m%d'), 
+                                        LPAD(FLOOR(RAND() * 10000), 4, '0')));
+    
+    -- Insertion de la réservation
+    INSERT INTO reservations (user_id, seance_id, nombre_places, prix_total, code_reservation)
+    VALUES (p_user_id, p_seance_id, v_nombre_places, v_prix_total, v_code_reservation);
+    
+    SET @last_reservation_id = LAST_INSERT_ID();
+    
+    -- Association des places
+    INSERT INTO reservation_places (reservation_id, place_id)
+    SELECT @last_reservation_id, place_id
+    FROM places
+    WHERE FIND_IN_SET(place_id, p_places_ids) > 0;
+    
+    -- Mise à jour de la disponibilité des places
+    UPDATE places 
+    SET is_disponible = FALSE 
+    WHERE FIND_IN_SET(place_id, p_places_ids) > 0;
+    
+    -- Mise à jour des places disponibles dans la séance
+    UPDATE seances 
+    SET places_disponibles = places_disponibles - v_nombre_places 
+    WHERE seance_id = p_seance_id;
+    
+    SELECT @last_reservation_id as reservation_id, v_code_reservation as code_reservation;
+END//
+DELIMITER ;</code></pre>
+								</div>
+
+								<h2>Captures d'Écran de l'Application</h2>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-4">
+											<span class="image fit">
+												<img src="images/pic02.jpg" alt="Page d'accueil" />
+												<p class="image-caption">Page d'accueil - Liste des films</p>
+											</span>
+										</div>
+										<div class="col-4">
+											<span class="image fit">
+												<img src="images/pic23.jpg" alt="Chat avec web socket" />
+												<p class="image-caption">Communication entre les fans des Animes</p>
+											</span>
+										</div>
+										<div class="col-4">
+											<span class="image fit">
+												<img src="images/pic21.jpg" alt="Réservation" />
+												<p class="image-caption">Processus de réservation</p>
+											</span>
+										</div>
+										<div class="col-6">
+											<span class="image fit">
+												<img src="images/pic22.jpg" alt="Informations des films" />
+												<p class="image-caption">Interface Inf Anime - Gestion des films</p>
+											</span>
+										</div>
+										
+									</div>
+								</div>
+
+								<h2>Technologies Utilisées</h2>
+								<div class="tech-stack">
+									<div class="tech-item">
+										<i class="fab fa-java fa-3x"></i>
+										<h4>Java JEE</h4>
+										<small>Backend principal</small>
+									</div>
+									<div class="tech-item">
+										<i class="fas fa-database fa-3x"></i>
+										<h4>MySQL</h4>
+										<small>Base de données</small>
+									</div>
+									<div class="tech-item">
+										<i class="fas fa-code fa-3x"></i>
+										<h4>JSP/Servlets</h4>
+										<small>Vue et contrôleurs</small>
+									</div>
+									<div class="tech-item">
+										<i class="fas fa-layer-group fa-3x"></i>
+										<h4>JPA/Hibernate</h4>
+										<small>ORM et persistance</small>
+									</div>
+									<div class="tech-item">
+										<i class="fab fa-html5 fa-3x"></i>
+										<h4>HTML5/CSS3</h4>
+										<small>Interface utilisateur</small>
+									</div>
+									<div class="tech-item">
+										<i class="fab fa-js-square fa-3x"></i>
+										<h4>JavaScript</h4>
+										<small>Interactivité client</small>
+									</div>
+									<div class="tech-item">
+										<i class="fas fa-server fa-3x"></i>
+										<h4>Apache Tomcat</h4>
+										<small>Serveur d'application</small>
+									</div>
+									<div class="tech-item">
+										<i class="fas fa-shield-alt fa-3x"></i>
+										<h4>JWT/Security</h4>
+										<small>Authentification</small>
+									</div>
+								</div>
+
+								<h2>Compétences Développées</h2>
+								<div class="skills-container">
+									<div class="skill-category">
+										<h4><i class="fas fa-cogs"></i> Développement Backend</h4>
+										<ul>
+											<li>Architecture MVC avec Java JEE</li>
+											<li>RESTful API Design</li>
+											<li>Gestion des transactions JTA</li>
+											<li>JPA/Hibernate pour l'ORM</li>
+											<li>Validation des données</li>
+											<li>Gestion des erreurs et logging</li>
+										</ul>
+									</div>
+									<div class="skill-category">
+										<h4><i class="fas fa-database"></i> Base de Données</h4>
+										<ul>
+											<li>Modélisation relationnelle MySQL</li>
+											<li>Optimisation des requêtes SQL</li>
+											<li>Procédures stockées et vues</li>
+											<li>Gestion des transactions ACID</li>
+											<li>Indexation et performance</li>
+											<li>Sécurité des données</li>
+										</ul>
+									</div>
+									<div class="skill-category">
+										<h4><i class="fas fa-laptop-code"></i> Développement Web</h4>
+										<ul>
+											<li>JSP et Servlets avancées</li>
+											<li>HTML5/CSS3 avec Bootstrap</li>
+											<li>JavaScript (AJAX, Fetch API)</li>
+											<li>Responsive Design</li>
+											<li>Gestion des sessions HTTP</li>
+											<li>Upload et gestion de fichiers</li>
+										</ul>
+									</div>
+									<div class="skill-category">
+										<h4><i class="fas fa-tasks"></i> Gestion de Projet</h4>
+										<ul>
+											<li>Conception UML (Use Case, Class)</li>
+											<li>Architecture N-tiers</li>
+											<li>Design Patterns (DAO, MVC, Singleton)</li>
+											<li>Tests unitaires avec JUnit</li>
+											<li>Documentation technique</li>
+											<li>Déploiement Tomcat</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- Boutons de navigation -->
+								<ul class="actions special" style="margin-top: 2rem;">
+									<li><a href="index.html#projects" class="button">Retour aux Projets</a></li>
+									<li><a href="project2.html" class="button large">Projet Suivant →</a></li>
+								</ul>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>Fonctionnalités Avancées</h3>
+							<div class="feature-list">
+								<div class="feature-item">
+									<i class="fas fa-qrcode"></i>
+									<h5>Codes QR</h5>
+									<small>Validation des tickets par QR code</small>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-bell"></i>
+									<h5>Notifications</h5>
+									<small>Alertes email et SMS</small>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-chart-pie"></i>
+									<h5>Reporting</h5>
+									<small>Statistiques et analytics</small>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-mobile-alt"></i>
+									<h5>Responsive</h5>
+									<small>Compatible mobile/tablette</small>
+								</div>
+							</div>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Scope du Projet</h3>
+								<p><strong>Durée:</strong> 4 mois<br />
+								<strong>Code Lines:</strong> 15K+<br />
+								<strong>Tables DB:</strong> 8 tables<br />
+								<strong>API Endpoints:</strong> 25+</p>
+							</section>
+							<section>
+								<h3>Livrables</h3>
+								<p>Code source complet<br />
+								Documentation technique<br />
+								Scripts de base de données<br />
+								Manuel utilisateur<br />
+								Présentation démo</p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Hayat Akarzazi 2025</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<style>
+				.architecture-diagram {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					margin: 2rem 0;
+					gap: 1rem;
+				}
+				
+				.arch-layer {
+					width: 80%;
+					padding: 1.5rem;
+					border-radius: 10px;
+					color: white;
+					text-align: center;
+				}
+				
+				.arch-layer h4 {
+					margin: 0 0 0.5rem 0;
+					font-size: 1.2rem;
+				}
+				
+				.arch-layer p {
+					margin: 0;
+					font-size: 0.9rem;
+					opacity: 0.9;
+				}
+				
+				.arch-layer small {
+					font-size: 0.8rem;
+					opacity: 0.8;
+				}
+				
+				.arch-arrow {
+					font-size: 1.5rem;
+					color: #666;
+				}
+				
+				.tech-stack {
+					display: grid;
+					grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+					gap: 1.5rem;
+					margin: 2rem 0;
+				}
+				
+				.tech-item {
+					text-align: center;
+					padding: 1.5rem 1rem;
+					background: #f8f9fa;
+					border-radius: 10px;
+					border: 2px solid #e9ecef;
+					transition: all 0.3s ease;
+				}
+				
+				.tech-item:hover {
+					transform: translateY(-5px);
+					box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+				}
+				
+				.tech-item i {
+					color: #6a11cb;
+					margin-bottom: 1rem;
+				}
+				
+				.tech-item h4 {
+					margin: 0.5rem 0;
+					color: #333;
+				}
+				
+				.tech-item small {
+					color: #666;
+					font-size: 0.85rem;
+				}
+				
+				.skills-container {
+					display: grid;
+					grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+					gap: 2rem;
+					margin: 2rem 0;
+				}
+				
+				.skill-category {
+					padding: 1.5rem;
+					background: #f8f9fa;
+					border-radius: 10px;
+					border: 1px solid #e9ecef;
+				}
+				
+				.skill-category h4 {
+					color: #6a11cb;
+					margin-bottom: 1rem;
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+				}
+				
+				.skill-category ul {
+					margin: 0;
+					padding-left: 1.2rem;
+				}
+				
+				.skill-category li {
+					margin-bottom: 0.5rem;
+					color: #555;
+					font-size: 0.9rem;
+				}
+				
+				.feature-list {
+					display: grid;
+					grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+					gap: 1rem;
+				}
+				
+				.feature-item {
+					text-align: center;
+					padding: 1rem;
+					background: #f0f4ff;
+					border-radius: 8px;
+				}
+				
+				.feature-item i {
+					font-size: 1.5rem;
+					color: #6a11cb;
+					margin-bottom: 0.5rem;
+				}
+				
+				.feature-item h5 {
+					margin: 0.3rem 0;
+					font-size: 0.9rem;
+				}
+				
+				.feature-item small {
+					color: #666;
+					font-size: 0.8rem;
+				}
+				
+				.feature-box {
+					height: 100%;
+				}
+				
+				.feature-box h3 {
+					color: #6a11cb;
+					margin-bottom: 1rem;
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+				}
+				
+				.feature-box ul {
+					margin: 0;
+					padding-left: 1.2rem;
+				}
+				
+				.feature-box li {
+					margin-bottom: 0.8rem;
+					font-size: 0.9rem;
+					line-height: 1.4;
+				}
+				
+				.feature-box strong {
+					color: #333;
+				}
+				
+				.image-caption {
+					text-align: center;
+					font-style: italic;
+					color: #666;
+					margin-top: 0.5rem;
+					font-size: 0.9rem;
+				}
+				
+				pre {
+					border-radius: 8px;
+				}
+				
+				.hljs {
+					background: #1e1e1e;
+					padding: 1.5rem !important;
+				}
+			</style>
+
+	</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<!--
+	Projet 3 - Classification d'Images avec CNN
+-->
+<html>
+	<head>
+		<title>Projet 3 - Classification Images | Hayat Akarzazi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Hayat Akarzazi</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Accueil</a></li>
+							<li class="active"><a href="project3.html">Classification Images</a></li>
+							<li><a href="index.html#projects">Tous les Projets</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://linkedin.com/in/hayat-akarzabi" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/HayatAkarzabi" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:hayat.akarzabi@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">2025</span>
+									<h1>Classification d'Images<br />
+									Cats vs Dogs vs Pandas</h1>
+									<p>Réseau de neurones convolutif (CNN) pour classification multi-classes<br />
+									Avec interface web interactive via Gradio et déploiement sur Hugging Face.</p>
+								</header>
+								
+								<div class="image main"><img src="images/cnn-architecture.jpg" alt="Architecture CNN" /></div>
+								
+								<!-- Hugging Face Link -->
+								<div class="box" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #ffdd00 0%, #ff6b00 100%); color: white;">
+									<h3><i class="fas fa-robot"></i> Démo en Ligne sur Hugging Face</h3>
+									<p>Testez le modèle directement dans votre navigateur :</p>
+									<a href="https://huggingface.co/spaces/hayatakarzabi/PredictionProject" class="button primary icon solid fa-play" target="_blank" style="margin: 10px; background: white; color: #ff6b00;">Tester la Démo</a>
+								</div>
+
+								<h2>Description du Projet</h2>
+								<p>Ce projet implémente un réseau de neurones convolutif (CNN) pour classifier des images en trois catégories : <strong>chats</strong>, <strong>chiens</strong> et <strong>pandas</strong>. L'application web développée avec Flask et Gradio permet aux utilisateurs d'uploader une image et d'obtenir la prédiction du modèle en temps réel.</p>
+								
+								<h2>Dataset Utilisé</h2>
+								<div class="table-wrapper">
+									<table class="alt">
+										<thead>
+											<tr>
+												<th>Source</th>
+												<th>Nombre d'images</th>
+												<th>Répartition</th>
+												<th>Dimensions</th>
+												<th>Augmentation</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Kaggle + Images personnelles</td>
+												<td>8,500 images</td>
+												<td>Chats: 3,000 • Chiens: 3,000 • Pandas: 2,500</td>
+												<td>224x224 pixels</td>
+												<td>Rotation, Zoom, Flip, Brightness</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h2>Architecture du Modèle CNN</h2>
+								<pre><code># Architecture du modèle CNN avec TensorFlow/Keras
+model = Sequential([
+    # Couche de convolution 1
+    Conv2D(32, (3, 3), activation='relu', input_shape=(224, 224, 3)),
+    MaxPooling2D(2, 2),
+    Dropout(0.25),
+    
+    # Couche de convolution 2
+    Conv2D(64, (3, 3), activation='relu'),
+    MaxPooling2D(2, 2),
+    Dropout(0.25),
+    
+    # Couche de convolution 3
+    Conv2D(128, (3, 3), activation='relu'),
+    MaxPooling2D(2, 2),
+    Dropout(0.25),
+    
+    # Couches fully connected
+    Flatten(),
+    Dense(512, activation='relu'),
+    Dropout(0.5),
+    Dense(3, activation='softmax')  # 3 classes: cats, dogs, pandas
+])
+
+# Compilation
+model.compile(
+    optimizer=Adam(learning_rate=0.0001),
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+])</code></pre>
+
+								<h2>Performances du Modèle</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Métriques d'Évaluation</h3>
+										<ul class="alt">
+											<li><strong>Accuracy sur test set :</strong> 94.2%</li>
+											<li><strong>Precision moyenne :</strong> 93.8%</li>
+											<li><strong>Recall moyen :</strong> 94.1%</li>
+											<li><strong>F1-Score :</strong> 94.0%</li>
+											<li><strong>Matrice de confusion :</strong> Très peu d'erreurs</li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Matrice de Confusion</h3>
+										<div class="table-wrapper">
+											<table>
+												<thead>
+													<tr>
+														<th></th>
+														<th>Chats Prédits</th>
+														<th>Chiens Prédits</th>
+														<th>Pandas Prédits</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td><strong>Chats Réels</strong></td>
+														<td style="background: #d4edda;">970</td>
+														<td style="background: #f8d7da;">15</td>
+														<td style="background: #f8d7da;">5</td>
+													</tr>
+													<tr>
+														<td><strong>Chiens Réels</strong></td>
+														<td style="background: #f8d7da;">12</td>
+														<td style="background: #d4edda;">965</td>
+														<td style="background: #f8d7da;">8</td>
+													</tr>
+													<tr>
+														<td><strong>Pandas Réels</strong></td>
+														<td style="background: #f8d7da;">8</td>
+														<td style="background: #f8d7da;">10</td>
+														<td style="background: #d4edda;">807</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+
+								<h2>Technologies Utilisées</h2>
+								<div class="row">
+									<div class="col-4 col-12-small">
+										<h3>Deep Learning</h3>
+										<ul>
+											<li>TensorFlow 2.x / Keras</li>
+											<li>CNN Architecture</li>
+											<li>Data Augmentation</li>
+											<li>Transfer Learning (VGG16)</li>
+											<li>Callbacks & Early Stopping</li>
+										</ul>
+									</div>
+									<div class="col-4 col-12-small">
+										<h3>Backend & Déploiement</h3>
+										<ul>
+											<li>Python Flask</li>
+											<li>Gradio Interface</li>
+											<li>Hugging Face Spaces</li>
+											<li>Pickle pour sérialisation</li>
+											<li>ONNX pour optimisation</li>
+										</ul>
+									</div>
+									<div class="col-4 col-12-small">
+										<h3>Data Processing</h3>
+										<ul>
+											<li>OpenCV pour traitement</li>
+											<li>PIL/Pillow pour images</li>
+											<li>NumPy & Pandas</li>
+											<li>Matplotlib/Seaborn</li>
+											<li>Scikit-learn metrics</li>
+										</ul>
+									</div>
+								</div>
+
+								<h2>Interface Gradio</h2>
+								<div class="box">
+									<p>L'interface utilisateur a été développée avec <strong>Gradio</strong>, une bibliothèque Python permettant de créer rapidement des interfaces web pour les modèles ML :</p>
+									
+									<pre><code>import gradio as gr
+import tensorflow as tf
+from PIL import Image
+import numpy as np
+
+# Chargement du modèle
+model = tf.keras.models.load_model('cnn_model.h5')
+
+def classify_image(image):
+    # Prétraitement
+    img = Image.fromarray(image.astype('uint8'), 'RGB')
+    img = img.resize((224, 224))
+    img_array = np.array(img) / 255.0
+    img_array = np.expand_dims(img_array, axis=0)
+    
+    # Prédiction
+    predictions = model.predict(img_array)
+    class_names = ['Cat', 'Dog', 'Panda']
+    
+    # Résultats formatés
+    results = {
+        class_names[i]: float(predictions[0][i])
+        for i in range(len(class_names))
+    }
+    
+    return results
+
+# Création de l'interface
+interface = gr.Interface(
+    fn=classify_image,
+    inputs=gr.Image(type="numpy"),
+    outputs=gr.Label(num_top_classes=3),
+    title="Cats vs Dogs vs Pandas Classifier",
+    description="Upload an image of a cat, dog, or panda to get classification results"
+)
+
+interface.launch()</code></pre>
+								</div>
+
+								<h2>Déploiement sur Hugging Face</h2>
+								<p>Le modèle a été déployé sur <strong>Hugging Face Spaces</strong> avec la structure suivante :</p>
+								
+								<div class="box">
+									<h4>Structure du déploiement :</h4>
+									<pre><code>huggingface-space/
+├── app.py                  # Application principale
+├── requirements.txt        # Dépendances Python
+├── cnn_model.h5           # Modèle entraîné
+├── README.md              # Documentation
+└── assets/
+    ├── sample_cat.jpg     # Exemples
+    ├── sample_dog.jpg
+    └── sample_panda.jpg</code></pre>
+									
+									<h4>Requirements.txt :</h4>
+									<pre><code>gradio==3.50.2
+tensorflow==2.13.0
+pillow==10.0.0
+numpy==1.24.3
+opencv-python==4.8.0.76
+pandas==2.0.3</code></pre>
+								</div>
+
+								<h2>Processus d'Entraînement</h2>
+								<dl>
+									<dt>Étape 1 : Collecte et préparation des données</dt>
+									<dd>
+										<p>Téléchargement des datasets Kaggle, nettoyage des images, redimensionnement à 224x224px, et séparation train/validation/test (70%/15%/15%).</p>
+									</dd>
+									
+									<dt>Étape 2 : Augmentation des données</dt>
+									<dd>
+										<p>Application de transformations pour améliorer la généralisation : rotation (±30°), zoom (0.8-1.2), flip horizontal, ajustement de luminosité.</p>
+									</dd>
+									
+									<dt>Étape 3 : Architecture et entraînement</dt>
+									<dd>
+										<p>Développement d'une architecture CNN personnalisée avec 3 couches convolutives, dropout pour éviter l'overfitting, et early stopping.</p>
+									</dd>
+									
+									<dt>Étape 4 : Évaluation et optimisation</dt>
+									<dd>
+										<p>Analyse des performances via matrice de confusion, courbes ROC, et fine-tuning des hyperparamètres.</p>
+									</dd>
+									
+									<dt>Étape 5 : Développement de l'interface</dt>
+									<dd>
+										<p>Création d'une interface utilisateur intuitive avec Gradio permettant l'upload d'images et l'affichage des prédictions avec scores de confiance.</p>
+									</dd>
+									
+									<dt>Étape 6 : Déploiement</dt>
+									<dd>
+										<p>Déploiement sur Hugging Face Spaces avec configuration des ressources GPU pour l'inférence.</p>
+									</dd>
+								</dl>
+
+								<h2>Challenges et Solutions</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Challenge 1 : Déséquilibre des classes</h3>
+										<p><strong>Solution :</strong> Utilisation de class weights pendant l'entraînement et oversampling de la classe minoritaire (pandas).</p>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Challenge 2 : Overfitting</h3>
+										<p><strong>Solution :</strong> Implémentation de dropout layers, data augmentation poussée, et early stopping.</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Challenge 3 : Performance en temps réel</h3>
+										<p><strong>Solution :</strong> Optimisation du modèle avec TensorFlow Lite et cache des prédictions.</p>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Challenge 4 : Déploiement facile</h3>
+										<p><strong>Solution :</strong> Choix de Hugging Face Spaces pour un déploiement gratuit et simple avec support GPU.</p>
+									</div>
+								</div>
+
+								<h2>Applications Potentielles</h2>
+								<ul>
+									<li><strong>Refuges animaliers :</strong> Identification automatique des espèces</li>
+									<li><strong>Applications mobiles :</strong> Fonctionnalité de reconnaissance d'animaux</li>
+									<li><strong>Éducation :</strong> Outil pédagogique pour l'apprentissage du deep learning</li>
+									<li><strong>Parcs naturels :</strong> Surveillance automatique de la faune</li>
+									<li><strong>Vétérinaires :</strong> Assistance à l'identification</li>
+								</ul>
+
+								<!-- Boutons de navigation -->
+								<ul class="actions special" style="margin-top: 2rem;">
+									<li><a href="project2.html" class="button large">← Projet Précédent</a></li>
+									<li><a href="index.html#projects" class="button">Retour aux Projets</a></li>
+									<li><a href="project4.html" class="button large">Projet Suivant →</a></li>
+								</ul>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>Ressources et Liens</h3>
+							<p>Accédez à toutes les ressources du projet :</p>
+							<ul class="actions">
+								<li><a href="https://huggingface.co/spaces/hayatakarzabi/PredictionProject" class="button" target="_blank">Démo Hugging Face</a></li>
+								<li><a href="https://www.kaggle.com/datasets/tongpython/cat-and-dog" class="button" target="_blank">Dataset Kaggle</a></li>
+							</ul>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Compétences Développées</h3>
+								<p>Deep Learning • CNN • TensorFlow • Gradio • Hugging Face • Computer Vision • Flask</p>
+							</section>
+							<section>
+								<h3>Projets Similaires</h3>
+								<p><a href="project2.html">Prédiction de Prix</a><br />
+								<a href="project4.html">Dashboard Power BI</a></p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Hayat Akarzazi 2025</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
