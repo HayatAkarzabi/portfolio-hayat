@@ -1,0 +1,492 @@
+<!DOCTYPE HTML>
+<!--
+	Projet 6 - Application Immobilière Flutter
+-->
+<html>
+	<head>
+		<title>Projet 6 - Application Immobilière | Hayat Akarzabi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<style>
+			/* Styles additionnels pour améliorer l'esthétique */
+			.screenshot-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+				gap: 15px;
+				margin-top: 20px;
+			}
+			
+			.screenshot-item {
+				border-radius: 10px;
+				overflow: hidden;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.screenshot-item:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+			}
+			
+			.tech-badge {
+				display: inline-block;
+				background: linear-gradient(135deg, #02569B, #0175C2);
+				color: white;
+				padding: 5px 12px;
+				border-radius: 20px;
+				margin: 3px;
+				font-size: 0.85em;
+				font-weight: 500;
+			}
+			
+			.feature-card {
+				background: #f8f9fa;
+				border-left: 4px solid #02569B;
+				padding: 15px;
+				margin-bottom: 15px;
+				border-radius: 0 8px 8px 0;
+			}
+			
+			.download-btn {
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.download-btn::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 5px;
+				height: 5px;
+				background: rgba(255, 255, 255, 0.5);
+				opacity: 0;
+				border-radius: 100%;
+				transform: scale(1, 1) translate(-50%);
+				transform-origin: 50% 50%;
+			}
+			
+			.download-btn:focus:not(:active)::after {
+				animation: ripple 1s ease-out;
+			}
+			
+			@keyframes ripple {
+				0% {
+					transform: scale(0, 0);
+					opacity: 0.5;
+				}
+				100% {
+					transform: scale(20, 20);
+					opacity: 0;
+				}
+			}
+			
+			.code-block {
+				position: relative;
+				border-radius: 8px;
+				overflow: hidden;
+				margin: 20px 0;
+			}
+			
+			.code-block pre {
+				margin: 0;
+				padding: 20px;
+				background: #2d2d2d;
+				color: #f8f8f2;
+			}
+			
+			.code-header {
+				background: #1e1e1e;
+				color: #ccc;
+				padding: 10px 20px;
+				font-family: 'Courier New', monospace;
+				font-size: 0.9em;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Hayat Akarzabi</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Accueil</a></li>
+							<li class="active"><a href="project6.html">Application Immobilière</a></li>
+							<li><a href="index.html#projects">Tous les Projets</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/hayat-akarzabi-46b99536b/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/HayatAkarzabi/PlatformeImmobiliereFront.git" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:hayat.akarzabi@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">2025</span>
+									<h1>Application Mobile Immobilière<br />
+									Locataire - Flutter</h1>
+									<p>Application mobile multiplateforme pour la gestion locative<br />
+									Développée avec Flutter et connectée à une API Spring Boot.</p>
+								</header>
+								
+								<div class="image main"><img src="images/image.png" alt="Application Immobilière Flutter" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" /></div>
+								
+								<!-- GitHub Links -->
+								<div class="box" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #02569B 0%, #0175C2 100%); color: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(2, 86, 155, 0.3);">
+									<h3 style="margin-bottom: 1.5rem;"><i class="fab fa-github"></i> Code Source sur GitHub</h3>
+									<p style="margin-bottom: 2rem;">Accédez au code source complet du projet :</p>
+									<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+										<a href="https://github.com/HayatAkarzabi/PlatformeImmobiliereFront.git" class="button primary icon brands fa-github" target="_blank" style="background: white; color: #02569B; border-radius: 25px; padding: 12px 25px; font-weight: 600; transition: all 0.3s ease;">
+											<i class="fab fa-mobile-alt"></i> Frontend Flutter
+										</a>
+										<a href="https://github.com/Gestion-Immobilier/Backend-gestion-immobilier.git" class="button primary icon brands fa-github" target="_blank" style="background: white; color: #02569B; border-radius: 25px; padding: 12px 25px; font-weight: 600; transition: all 0.3s ease;">
+											<i class="fas fa-server"></i> Backend Spring Boot
+										</a>
+										<a href="assets/docs/PFA_IDSI__2_.pdf" class="button icon solid fa-file-pdf download-btn" style="background: #FF4081; color: white; border-radius: 25px; padding: 12px 25px; font-weight: 600; border: none; transition: all 0.3s ease;" download>
+											<i class="fas fa-download"></i> Télécharger le Rapport
+										</a>
+									</div>
+								</div>
+
+								<h2>📋 Description du Projet</h2>
+								<p>Ce projet présente le développement d'une application mobile multiplateforme <strong>Flutter</strong> pour la gestion immobilière, spécifiquement dédiée aux locataires. L'application s'intègre avec un backend Spring Boot sécurisé par JWT et permet aux utilisateurs de gérer leurs contrats, paiements, réclamations et interactions avec les propriétaires.</p>
+								
+								<h2>🏗️ Architecture du Système</h2>
+								<div class="table-wrapper" style="border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+									<table class="alt">
+										<thead>
+											<tr>
+												<th style="background: linear-gradient(135deg, #02569B, #0175C2); color: white;">Composant</th>
+												<th style="background: linear-gradient(135deg, #02569B, #0175C2); color: white;">Technologie</th>
+												<th style="background: linear-gradient(135deg, #02569B, #0175C2); color: white;">Rôle</th>
+												<th style="background: linear-gradient(135deg, #02569B, #0175C2); color: white;">Responsabilités</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>Frontend Mobile</strong></td>
+												<td><span class="tech-badge">Flutter (Dart)</span></td>
+												<td>Interface Locataire</td>
+												<td>UI/UX, gestion état, appel API</td>
+											</tr>
+											<tr>
+												<td><strong>Backend API</strong></td>
+												<td><span class="tech-badge">Spring Boot (Java)</span></td>
+												<td>Serveur d'application</td>
+												<td>Logique métier, sécurité, API REST</td>
+											</tr>
+											<tr>
+												<td><strong>Base de données</strong></td>
+												<td><span class="tech-badge">PostgreSQL</span></td>
+												<td>Stockage persistant</td>
+												<td>Biens, utilisateurs, transactions</td>
+											</tr>
+											<tr>
+												<td><strong>Stockage fichiers</strong></td>
+												<td><span class="tech-badge">MinIO</span></td>
+												<td>Stockage objets</td>
+												<td>Photos biens, documents</td>
+											</tr>
+											<tr>
+												<td><strong>Sécurité</strong></td>
+												<td><span class="tech-badge">Spring Security + JWT</span></td>
+												<td>Authentification</td>
+												<td>Tokens JWT, rôles, permissions</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h2>🚀 Fonctionnalités Principales</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>👥 Pour les Locataires</h3>
+										<div class="feature-card">
+											<strong>Authentification sécurisée</strong> : Login/Register avec JWT
+										</div>
+										<div class="feature-card">
+											<strong>Dashboard personnel</strong> : Vue d'ensemble des biens
+										</div>
+										<div class="feature-card">
+											<strong>Gestion des contrats</strong> : Consultation et téléchargement
+										</div>
+										<div class="feature-card">
+											<strong>Paiements en ligne</strong> : Historique et prochains paiements
+										</div>
+										<div class="feature-card">
+											<strong>Réclamations</strong> : Création et suivi des tickets
+										</div>
+										<div class="feature-card">
+											<strong>Messagerie interne</strong> : Communication avec propriétaires
+										</div>
+										<div class="feature-card">
+											<strong>Notifications push</strong> : Alertes importantes
+										</div>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>📱 Captures d'Écran</h3>
+										<div class="screenshot-grid">
+											<div class="screenshot-item">
+												<img src="images/im1.png" alt="Écran de Connexion" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Connexion</div>
+											</div>
+											<div class="screenshot-item">
+												<img src="images/im2.png" alt="Écran d'Inscription" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Inscription</div>
+											</div>
+											<div class="screenshot-item">
+												<img src="images/dash.png" alt="Tableau de Bord" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Dashboard</div>
+											</div>
+											<div class="screenshot-item">
+												<img src="images/pay.png" alt="Paiements" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Paiements</div>
+											</div>
+											<div class="screenshot-item">
+												<img src="images/contr.png" alt="Contrats" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Contrats</div>
+											</div>
+											<div class="screenshot-item">
+												<img src="images/rec.png" alt="Réclamations" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Réclamations</div>
+											</div>
+											<div class="screenshot-item">
+												<img src="images/rech.png" alt="Recherche des biens" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Recherche</div>
+											</div>
+											<div class="screenshot-item">
+												<img src="images/stat.png" alt="Statistiques" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Statistiques</div>
+											</div>
+											<div class="screenshot-item">
+												<img src="images/detail.png" alt="Détails des biens" style="width: 100%; height: auto;" />
+												<div style="padding: 10px; text-align: center; background: white; font-size: 0.85em;">Détails</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<h2>📁 Structure de l'Application Flutter</h2>
+								<div class="code-block">
+									<div class="code-header">
+										<span>📂 Architecture Flutter (lib/)</span>
+										<i class="fas fa-code"></i>
+									</div>
+									<pre><code>lib/
+├── main.dart                    # Point d'entrée
+├── core/                        # Logique centrale
+│   ├── constants/               # Constantes de l'app
+│   ├── utils/                   # Utilitaires
+│   └── services/                # Services (API, local storage)
+├── data/                        # Gestion des données
+│   ├── models/                  # Modèles de données
+│   ├── repositories/            # Repositories
+│   └── datasources/             # Sources de données
+├── presentation/                # Interface utilisateur
+│   ├── widgets/                 # Widgets réutilisables
+│   ├── pages/                   # Écrans de l'application
+│   │   ├── auth/                # Authentification
+│   │   ├── dashboard/           # Tableau de bord
+│   │   ├── properties/          # Biens immobiliers
+│   │   ├── contracts/           # Contrats
+│   │   ├── payments/            # Paiements
+│   │   ├── claims/              # Réclamations
+│   │   └── messages/            # Messagerie
+│   └── bloc/                    # State management (BLoC)
+└── dependencies.dart           # Injection de dépendances</code></pre>
+								</div>
+
+								<h2>💾 Technologies Utilisées</h2>
+								<div class="row">
+									<div class="col-4 col-12-small">
+										<div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%;">
+											<h3 style="color: #0175C2;"><i class="fab fa-flutter"></i> Frontend Flutter</h3>
+											<ul>
+												<li>Flutter SDK 3.x</li>
+												<li>Dart Language</li>
+												<li>Provider/BLoC State Management</li>
+												<li>Dio pour les requêtes HTTP</li>
+												<li>Shared Preferences</li>
+												<li>Flutter Local Notifications</li>
+												<li>Cached Network Image</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-4 col-12-small">
+										<div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%;">
+											<h3 style="color: #6DB33F;"><i class="fas fa-server"></i> Backend & Infrastructure</h3>
+											<ul>
+												<li>Spring Boot 3.x</li>
+												<li>Spring Security + JWT</li>
+												<li>PostgreSQL Database</li>
+												<li>MinIO Object Storage</li>
+												<li>RESTful API Design</li>
+												<li>Docker & Docker Compose</li>
+												<li>Swagger/OpenAPI</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-4 col-12-small">
+										<div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%;">
+											<h3 style="color: #FF6B35;"><i class="fas fa-tools"></i> Outils & Services</h3>
+											<ul>
+												<li>Postman pour tests API</li>
+												<li>Git & GitHub</li>
+												<li>Android Studio / VS Code</li>
+												<li>Figma pour le design</li>
+												<li>Firebase Cloud Messaging</li>
+												<li>Stripe/PayPal Intégration</li>
+												<li>Google Maps API</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<h2>📈 Résultats et Perspectives</h2>
+								<div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 15px; margin: 20px 0;">
+									<h3 style="color: #02569B;">✅ Résultats Obtenus</h3>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<ul style="list-style-type: none; padding-left: 0;">
+												<li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+													<i class="fas fa-check-circle" style="color: #28a745; position: absolute; left: 0;"></i>
+													<strong>Interface utilisateur fluide et intuitive</strong>
+												</li>
+												<li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+													<i class="fas fa-check-circle" style="color: #28a745; position: absolute; left: 0;"></i>
+													<strong>Performances optimisées (60 FPS stables)</strong>
+												</li>
+												<li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+													<i class="fas fa-check-circle" style="color: #28a745; position: absolute; left: 0;"></i>
+													<strong>Sécurité renforcée (tokens JWT, chiffrement)</strong>
+												</li>
+											</ul>
+										</div>
+										<div class="col-6 col-12-small">
+											<ul style="list-style-type: none; padding-left: 0;">
+												<li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+													<i class="fas fa-check-circle" style="color: #28a745; position: absolute; left: 0;"></i>
+													<strong>Architecture scalable et maintenable</strong>
+												</li>
+												<li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+													<i class="fas fa-check-circle" style="color: #28a745; position: absolute; left: 0;"></i>
+													<strong>Expérience utilisateur complète</strong>
+												</li>
+												<li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+													<i class="fas fa-check-circle" style="color: #28a745; position: absolute; left: 0;"></i>
+													<strong>Multiplateforme (Android & iOS)</strong>
+												</li>
+											</ul>
+										</div>
+									</div>
+									
+									<h3 style="color: #02569B; margin-top: 30px;">🔮 Perspectives d'Amélioration</h3>
+									<div style="background: white; padding: 20px; border-radius: 10px; margin-top: 15px;">
+										<ul style="list-style-type: none; padding-left: 0;">
+											<li style="margin-bottom: 10px; padding-left: 30px; position: relative;">
+												<i class="fas fa-credit-card" style="color: #635BFF; position: absolute; left: 0;"></i>
+												<strong>Intégration de paiements en ligne</strong> (Stripe, PayPal)
+											</li>
+											<li style="margin-bottom: 10px; padding-left: 30px; position: relative;">
+												<i class="fas fa-comments" style="color: #00A389; position: absolute; left: 0;"></i>
+												<strong>Chat en temps réel</strong> avec Socket.io
+											</li>
+											<li style="margin-bottom: 10px; padding-left: 30px; position: relative;">
+												<i class="fas fa-robot" style="color: #FF4081; position: absolute; left: 0;"></i>
+												<strong>Intelligence artificielle</strong> pour recommandations de biens
+											</li>
+											<li style="padding-left: 30px; position: relative;">
+												<i class="fas fa-chart-line" style="color: #FFB300; position: absolute; left: 0;"></i>
+												<strong>Analytics avancées</strong> pour propriétaires
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- Boutons de navigation -->
+								<div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+									<a href="project5.html" class="button large" style="border-radius: 25px; padding: 12px 30px;">
+										<i class="fas fa-arrow-left"></i> Projet Précédent
+									</a>
+									<a href="index.html#projects" class="button" style="border-radius: 25px; padding: 12px 30px; margin: 0 10px;">
+										<i class="fas fa-th-list"></i> Tous les Projets
+									</a>
+									<a href="project7.html" class="button large" style="border-radius: 25px; padding: 12px 30px;">
+										Projet Suivant <i class="fas fa-arrow-right"></i>
+									</a>
+								</div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>📚 Ressources et Liens</h3>
+							<p>Accédez à toutes les ressources du projet :</p>
+							<ul class="actions">
+								<li><a href="assets/docs/PFA_IDSI.pdf" class="button" style="border-radius: 25px;" download>
+									<i class="fas fa-file-pdf"></i> Rapport Complet
+								</a></li>
+								<li><a href="https://github.com/HayatAkarzabi/PlatformeImmobiliereFront.git" class="button" target="_blank" style="border-radius: 25px;">
+									<i class="fab fa-github"></i> Code Flutter
+								</a></li>
+								<li><a href="https://github.com/Gestion-Immobilier/Backend-gestion-immobilier.git" class="button" target="_blank" style="border-radius: 25px;">
+									<i class="fab fa-github"></i> Code Spring Boot
+								</a></li>
+							</ul>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>💼 Compétences Développées</h3>
+								<p style="line-height: 1.8;">
+									<span class="tech-badge">Flutter</span>
+									<span class="tech-badge">Dart</span>
+									<span class="tech-badge">Spring Boot</span>
+									<span class="tech-badge">REST API</span>
+									<span class="tech-badge">JWT</span>
+									<span class="tech-badge">PostgreSQL</span>
+									<span class="tech-badge">State Management</span>
+									<span class="tech-badge">Mobile UI/UX</span>
+								</p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Hayat Akarzabi 2025</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
