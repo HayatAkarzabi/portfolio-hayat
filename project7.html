@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+	Projet 7 - Système de Sécurité PC par Reconnaissance Faciale en Temps Réel
+-->
+<html>
+	<head>
+		<title>Sécurité PC - Reconnaissance Faciale | Hayat Akarzabi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Hayat Akarzabi</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Accueil</a></li>
+							<li class="active"><a href="project7.html">Sécurité PC</a></li>
+							<li><a href="index.html#projects">Tous les Projets</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://linkedin.com/in/hayat-akarzabi" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/HayatAkarzabi" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:hayat.akarzabi@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">2026</span>
+									<h1>Système de Sécurité PC<br />
+									par Reconnaissance Faciale en Temps Réel</h1>
+									<p>Verrouillage automatique de l'ordinateur et alertes Telegram instantanées<br />
+									dès qu'un visage inconnu est détecté par la webcam.</p>
+								</header>
+
+								<div class="image main"><img src="images/security-system.svg" alt="Système de sécurité par reconnaissance faciale" /></div>
+
+								<!-- Projet personnel -->
+								<div class="box" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #1b2a41 0%, #0d1420 100%); color: white;">
+									<h3><i class="fas fa-user-shield"></i> Projet Personnel</h3>
+									<p>Application de sécurité fonctionnant en local sur un PC, sans interface web publique — pensée comme une couche de protection physique supplémentaire pour l'ordinateur.</p>
+								</div>
+
+								<h2>Description du Projet</h2>
+								<p>Ce projet est né d'un besoin concret : savoir si quelqu'un d'autre que moi se trouve devant mon ordinateur, même quelques secondes, et pouvoir réagir automatiquement. Le système surveille en continu le flux de la webcam, reconnaît mon visage grâce à un modèle entraîné sur mes propres photos, et déclenche un verrouillage immédiat de la session Windows dès qu'un visage non reconnu apparaît dans le champ de la caméra.</p>
+
+								<h2>Fonctionnalités Principales</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3><i class="fas fa-user-check"></i> Reconnaissance en temps réel</h3>
+										<p>Analyse continue du flux vidéo de la webcam pour détecter et identifier les visages présents devant l'écran.</p>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3><i class="fas fa-lock"></i> Verrouillage automatique</h3>
+										<p>Verrouillage immédiat de la session dès qu'un visage inconnu est détecté, sans intervention manuelle.</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3><i class="fab fa-telegram"></i> Alertes Telegram avec photo</h3>
+										<p>Envoi automatique d'un message et d'une photo via l'API Telegram Bot dès qu'une intrusion est détectée.</p>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3><i class="fas fa-video-slash"></i> Détection d'anomalies caméra</h3>
+										<p>Détection d'une caméra obstruée ou d'une absence prolongée devant l'écran, avec verrouillage préventif.</p>
+									</div>
+								</div>
+
+								<h2>Comment ça fonctionne</h2>
+								<dl>
+									<dt>1. Capture</dt>
+									<dd><p>La webcam capture un flux vidéo continu, traité image par image en Python avec OpenCV.</p></dd>
+
+									<dt>2. Détection du visage</dt>
+									<dd><p>Un classifieur de détection de visages localise les visages présents dans chaque image.</p></dd>
+
+									<dt>3. Reconnaissance</dt>
+									<dd><p>Le modèle LBPH (Local Binary Patterns Histograms) compare le visage détecté à mon visage de référence et calcule un score de confiance.</p></dd>
+
+									<dt>4. Décision</dt>
+									<dd><p>Si le visage n'est pas reconnu, si la caméra est obstruée, ou si aucun visage n'est détecté pendant une durée prolongée, le système déclenche une action.</p></dd>
+
+									<dt>5. Action & alerte</dt>
+									<dd><p>La session est verrouillée automatiquement et une photo accompagnée d'un message est envoyée instantanément via le bot Telegram.</p></dd>
+								</dl>
+
+								<h2>Technologies Utilisées</h2>
+								<div class="row">
+									<div class="col-4 col-12-small">
+										<h3>Vision par Ordinateur</h3>
+										<ul>
+											<li>Python</li>
+											<li>OpenCV</li>
+											<li>LBPH Face Recognizer</li>
+											<li>Haar Cascade (détection)</li>
+										</ul>
+									</div>
+									<div class="col-4 col-12-small">
+										<h3>Automatisation Système</h3>
+										<ul>
+											<li>Verrouillage de session Windows</li>
+											<li>Surveillance en arrière-plan</li>
+											<li>Détection d'inactivité</li>
+										</ul>
+									</div>
+									<div class="col-4 col-12-small">
+										<h3>Notifications</h3>
+										<ul>
+											<li>Telegram Bot API</li>
+											<li>Envoi de photo en temps réel</li>
+											<li>Messages d'alerte horodatés</li>
+										</ul>
+									</div>
+								</div>
+
+								<h2>Défis et Solutions</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Défi 1 : Faux positifs / faux négatifs</h3>
+										<p><strong>Solution :</strong> ajustement du seuil de confiance du modèle LBPH et tests dans différentes conditions de luminosité pour fiabiliser la reconnaissance.</p>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Défi 2 : Performance en temps réel</h3>
+										<p><strong>Solution :</strong> optimisation de la fréquence de capture et du traitement d'image pour ne pas ralentir le PC pendant la surveillance continue.</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Défi 3 : Détection d'absence vs. simple mouvement</h3>
+										<p><strong>Solution :</strong> mise en place d'une temporisation avant de déclencher le verrouillage, pour éviter les faux déclenchements lors de courtes absences.</p>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Défi 4 : Caméra volontairement cachée</h3>
+										<p><strong>Solution :</strong> détection d'une image anormalement sombre ou uniforme pour identifier une obstruction de la caméra et déclencher une alerte.</p>
+									</div>
+								</div>
+
+								<h2>Limites Actuelles & Pistes d'Amélioration</h2>
+								<ul>
+									<li>Reconnaissance d'un seul utilisateur autorisé à la fois (pas de gestion multi-profils pour l'instant).</li>
+									<li>Pas de protection anti-spoofing (différenciation entre un vrai visage et une photo) — amélioration envisagée avec de la détection de profondeur ou de clignement des yeux.</li>
+									<li>Sensibilité aux conditions de très faible luminosité.</li>
+									<li>Migration possible vers un modèle de deep learning (ex. FaceNet) pour une reconnaissance plus robuste.</li>
+								</ul>
+
+								<!-- Boutons de navigation -->
+								<ul class="actions special" style="margin-top: 2rem;">
+									<li><a href="project8.html" class="button large">← Projet Précédent</a></li>
+									<li><a href="index.html#projects" class="button">Retour aux Projets</a></li>
+									<li><a href="project6.html" class="button large">Projet Suivant →</a></li>
+								</ul>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>Ressources et Liens</h3>
+							<p>Accédez aux ressources du projet :</p>
+							<ul class="actions">
+								<!-- TODO Hayat : remplace ce lien par l'URL réelle de ton dépôt GitHub pour ce projet -->
+								<li><a href="https://github.com/HayatAkarzabi" class="button" target="_blank">Voir sur GitHub</a></li>
+							</ul>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Compétences Développées</h3>
+								<p>Vision par Ordinateur • OpenCV • Python • Reconnaissance Faciale • Automatisation Système • API Telegram</p>
+							</section>
+							<section>
+								<h3>Projets Similaires</h3>
+								<p><a href="project3.html">Classification d'Images par CNN</a><br />
+								<a href="project2.html">Prédiction des Prix Immobiliers</a></p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Hayat Akarzabi 2026</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

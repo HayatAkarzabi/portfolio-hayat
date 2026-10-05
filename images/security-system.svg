@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101826"/>
+      <stop offset="100%" stop-color="#1b2a41"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff4d4d"/>
+      <stop offset="100%" stop-color="#ff8a3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- subtle grid -->
+  <g stroke="#2a3b55" stroke-width="1" opacity="0.4">
+    <line x1="0" y1="169" x2="1200" y2="169"/>
+    <line x1="0" y1="338" x2="1200" y2="338"/>
+    <line x1="0" y1="507" x2="1200" y2="507"/>
+    <line x1="300" y1="0" x2="300" y2="675"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+    <line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <!-- webcam lens -->
+  <circle cx="600" cy="300" r="90" fill="#0d1420" stroke="#3a506b" stroke-width="6"/>
+  <circle cx="600" cy="300" r="58" fill="#182a44" stroke="#4f6a8f" stroke-width="4"/>
+  <circle cx="600" cy="300" r="26" fill="url(#accent)"/>
+  <circle cx="588" cy="288" r="8" fill="#ffffff" opacity="0.8"/>
+
+  <!-- face-detection bounding box -->
+  <g stroke="url(#accent)" stroke-width="4" fill="none">
+    <polyline points="430,180 410,180 410,200"/>
+    <polyline points="770,180 790,180 790,200"/>
+    <polyline points="430,420 410,420 410,400"/>
+    <polyline points="770,420 790,420 790,400"/>
+  </g>
+  <text x="600" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#ff8a3d" font-weight="bold">VISAGE NON RECONNU</text>
+
+  <!-- lock icon left -->
+  <g transform="translate(140,250)">
+    <rect x="0" y="40" width="90" height="70" rx="10" fill="#1d2b40" stroke="#4f6a8f" stroke-width="4"/>
+    <path d="M15,40 L15,15 A30,30 0 0 1 75,15 L75,40" fill="none" stroke="#4f6a8f" stroke-width="8"/>
+    <circle cx="45" cy="75" r="8" fill="#ff4d4d"/>
+  </g>
+  <text x="185" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#9fb3cc">Verrouillage auto</text>
+
+  <!-- telegram alert right -->
+  <g transform="translate(940,255)">
+    <circle cx="40" cy="40" r="40" fill="#229ED9"/>
+    <path d="M18 40 L60 22 L50 60 L40 50 L30 56 Z" fill="#ffffff"/>
+  </g>
+  <text x="980" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#9fb3cc">Alerte Telegram</text>
+
+  <!-- title -->
+  <text x="600" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#ffffff" font-weight="bold">Sécurité PC — Reconnaissance Faciale</text>
+  <text x="600" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#7f93b0">Détection temps réel • OpenCV • Python</text>
+</svg>
